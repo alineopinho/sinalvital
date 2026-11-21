@@ -32,7 +32,7 @@ Promover a conscientização e a aprendizagem introdutória sobre acessibilidade
 
 ## 5. Produto visual e escopo
 
-**Produto:** site demonstrativo público, a ser publicado no GitHub Pages, com **um único `index.html`**, HTML semântico, CSS, JavaScript e arquivos JSON como fonte de conteúdo (não banco de dados tradicional).
+**Produto:** site demonstrativo público, a ser publicado no GitHub Pages, com **oito páginas HTML estáticas**, HTML semântico, CSS, JavaScript e arquivos JSON como fonte de conteúdo (não banco de dados tradicional).
 
 ### Áreas aprovadas
 

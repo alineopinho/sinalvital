@@ -4,7 +4,7 @@
 
 ## 1. Princípios
 
-- Um único `index.html`, com seções e navegação por links internos e JavaScript apenas quando necessário.
+- Home em `index.html` e sete páginas independentes em `pages/`. A navegação usa links HTML, com JavaScript apenas para as interações necessárias.
 - Sem login ou roteamento complexo.
 - Menu global com acesso às oito áreas, indicação de localização e possibilidade de retorno à Home.
 - Os quatro cartões principais identificam **necessidades do visitante**, não nomes técnicos de módulos.
@@ -60,16 +60,16 @@ flowchart TD
 
 **Vídeos:** cards com título, categoria e disponibilidade. Apenas itens efetivamente disponíveis terão botão reproduzir habilitado; sem reprodução fictícia.
 
-**Navegação:** menu acessível por teclado, links compreensíveis, foco visível e saída previsível de painéis. Preferir comportamento natural de âncoras quando possível.
+**Navegação:** menu acessível por teclado, links compreensíveis, foco visível e saída previsível de painéis. Usar caminhos relativos entre páginas e âncoras para destinos dentro do documento, como o link “Ir para o conteúdo”.
 
 ## 6. Critérios para a implementação completa
 
-- Preservar as oito áreas dentro de um único `index.html` e manter os quatro destinos da Home como links acionáveis com teclado.
+- Distribuir as oito áreas em páginas HTML e manter os quatro destinos da Home como links acionáveis com teclado.
 - Menu global: apresentar todas as oito áreas diretamente ou por agrupamentos claros; não esconder destinos sem alternativa de acesso; manter retorno à Home.
 - No Glossário: combinar busca normalizada com filtros, mostrar contagem, permitir limpar filtros e abrir um painel por vez sem perder o estado da busca; devolver o foco ao controle de origem quando o painel for fechado.
 - Na Biblioteca: diferenciar vídeos **disponíveis**, **planejados** e **indisponíveis**; não oferecer controles de reprodução fictícios.
 - No Quiz: perguntas e feedback educativo, resultado em memória, reinício e nenhuma coleta de dados pessoais.
-- Navegação com âncoras e gerenciamento de foco somente quando fizer sentido; checar abertura direta e atualização da URL no GitHub Pages.
+- Usar navegação nativa entre documentos e gerenciar o foco nas interações locais. Conferir a abertura direta e a atualização de cada página no GitHub Pages.
 - Testar responsividade em 320px, 375px, tablet e desktop, foco por teclado, leitores de tela quando possível e `prefers-reduced-motion`.
 
 ## 7. Questões visuais pendentes

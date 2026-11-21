@@ -1,0 +1,32 @@
+[
+  {
+    "pergunta": "Júlia chegou com uma acompanhante. Com quem você deve começar a conversa?",
+    "alternativas": ["Com Júlia, perguntando como ela prefere se comunicar.", "Com a acompanhante, pedindo que responda por Júlia.", "Com a recepção, sem consultar Júlia."],
+    "correta": 0,
+    "explicacao": "Dirija-se à própria pessoa. Júlia pode indicar sua preferência de comunicação e decidir como a acompanhante participa."
+  },
+  {
+    "pergunta": "Como saber se uma pessoa surda prefere usar Libras na consulta?",
+    "alternativas": ["Usar sempre a mesma estratégia.", "Perguntar diretamente à pessoa.", "Decidir com base no aparelho auditivo."],
+    "correta": 1,
+    "explicacao": "As preferências variam. Perguntar permite combinar um recurso que funcione para aquela pessoa naquele atendimento."
+  },
+  {
+    "pergunta": "Júlia escolheu interpretação em Libras para conversar sobre seu histórico. Como conduzir a conversa?",
+    "alternativas": ["Pedir que o intérprete responda por Júlia.", "Trocar o recurso pela leitura labial.", "Viabilizar a interpretação e dirigir as perguntas a Júlia."],
+    "correta": 2,
+    "explicacao": "A interpretação viabiliza o diálogo. As perguntas e decisões continuam sendo tratadas diretamente com Júlia."
+  },
+  {
+    "pergunta": "Como confirmar que as orientações ficaram claras?",
+    "alternativas": ["Convidar a pessoa a explicar o que ficou combinado, no modo de comunicação escolhido.", "Repetir as mesmas palavras mais alto.", "Encerrar assim que a pessoa fizer um gesto de confirmação."],
+    "correta": 0,
+    "explicacao": "Uma confirmação aberta ajuda a perceber dúvidas e permite explicar novamente o que for necessário."
+  },
+  {
+    "pergunta": "Antes de falar sobre informações pessoais na presença de um acompanhante, o que fazer?",
+    "alternativas": ["Compartilhar as informações com qualquer acompanhante.", "Confirmar se e como a pessoa quer a presença do acompanhante.", "Pedir ao acompanhante que decida sobre a consulta."],
+    "correta": 1,
+    "explicacao": "A pessoa atendida participa das decisões sobre seu cuidado. Confirme sua preferência e preserve a privacidade."
+  }
+]

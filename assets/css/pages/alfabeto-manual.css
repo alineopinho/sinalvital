@@ -1,0 +1,15 @@
+.alphabet-feature { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--mint); }
+.alphabet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(2.5rem, 1fr));
+  gap: .4rem;
+  padding: 0;
+  list-style: none;
+}
+.alphabet-grid li { background: var(--surface); border-radius: .5rem; text-align: center; padding: .35rem; font-weight: 700; }
+
+.alphabet-art { max-height: 12rem; }
+
+@media (max-width: 47.99rem) {
+  .alphabet-feature { grid-template-columns: 1fr; }
+}

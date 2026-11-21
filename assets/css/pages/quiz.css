@@ -1,0 +1,13 @@
+.page-quiz .art-intro { background: var(--peach); }
+
+.quiz-shell { max-width: 49rem; margin-top: 1.5rem; background: var(--mint); }
+.quiz-shell .journey-scenario { margin-top: 0; }
+.quiz-shell progress { width: 100%; accent-color: var(--accent); }
+.quiz-shell h3 { margin-block: .8rem; }
+.answer-feedback:empty { display: none; }
+.answer-feedback { padding: .75rem; border-radius: .5rem; background: var(--peach); }
+.answer-feedback[data-correct="true"] { background: var(--mint); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .answer-feedback:not(:empty) { animation: sinalvital-enter .24s ease-out; }
+}

@@ -1,0 +1,72 @@
+.page-glossario .art-intro { background: var(--lilac); }
+
+.glossary-filters {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 1rem;
+  min-width: 0;
+  margin: 1rem 0;
+  padding: 0;
+  border: 0;
+}
+
+.glossary-filters label { display: grid; gap: .35rem; font-weight: 650; }
+
+.glossary-filters input,
+.glossary-filters select,
+.glossary-button {
+  min-height: var(--control-height);
+  max-width: 100%;
+  padding: .55rem .75rem;
+  border: 1px solid var(--accent);
+  border-radius: .65rem;
+  background: white;
+  color: var(--ink);
+  font: inherit;
+}
+
+.glossary-button { cursor: pointer; font-weight: 650; }
+.glossary-button:hover { background: var(--mint); }
+
+.glossary-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: .75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.glossary-card, .glossary-panel {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.glossary-card { height: 100%; min-height: 9rem; background: var(--surface); }
+.glossary-card h3 { font-size: 1.2rem; }
+.glossary-card p { font-size: .95rem; margin-block: .25rem .65rem; }
+.glossary-card:has([aria-expanded="true"]) { border-color: var(--accent); }
+.glossary-panel { align-self: start; background: var(--mint); }
+.glossary-panel h3 { margin-bottom: .65rem; }
+.glossary-panel h4 { margin: 1rem 0 0; }
+.glossary-panel figure { margin: .5rem 0; }
+.glossary-panel img, .glossary-panel video { display: block; max-width: 100%; height: auto; }
+
+@media (min-width: 48rem) {
+  .glossary-layout:has(> .glossary-panel:not([hidden])) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 1rem;
+  }
+}
+
+#glossary-reset { margin-bottom: .75rem; }
+#glossary-status { min-height: 1.6rem; }
+
+@media (max-width: 47.99rem) {
+  .glossary-filters { grid-template-columns: 1fr; }
+  .glossary-panel { margin-top: .5rem; }
+  .glossary-card { height: auto; }
+}

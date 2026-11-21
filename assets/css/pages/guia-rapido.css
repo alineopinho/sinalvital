@@ -1,0 +1,7 @@
+.feature > .anamnese-art {
+  display: block;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #f6f1e9;
+}

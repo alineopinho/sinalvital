@@ -59,7 +59,7 @@ Promover a conscientização e a aprendizagem introdutória sobre acessibilidade
 - **Nome:** SinalVital.
 - **Formato:** site estático interativo, hospedado no GitHub Pages.
 - **Tecnologias:** HTML, CSS, JavaScript e JSON.
-- **Navegação:** um `index.html`; quatro cartões da Home: Quero aprender, Preparar atendimento, Consultar termo e Assistir vídeos.
+- **Navegação:** Home em `index.html` e sete páginas em `pages/`. Os quatro cartões da Home: Quero aprender, Preparar atendimento, Consultar termo e Assistir vídeos.
 - **Áreas:** Página inicial, Primeiros passos, Guia rápido, Glossário, Biblioteca de vídeos, Sobre o projeto, Quiz educativo e Alfabeto manual.
 - **Sem:** login, back-end, banco externo ou persistência dos resultados do quiz.
 - **Vídeos:** usar materiais confiáveis e autorizados; sinalizar claramente conteúdos ainda não disponíveis. Ilustrações 3D decorativas não equivalem a sinais em Libras.
@@ -148,7 +148,6 @@ Referenciar as fontes **efetivamente utilizadas no texto e na metodologia**, con
 ---
 
 *Fonte: orientações das professoras fornecidas pelo grupo. Este documento reúne exigências acadêmicas e propostas atuais do SinalVital; itens em aberto não devem ser apresentados como realizados ou confirmados.*
-
 
 ## 8. Atualização do produto digital — planejamento para a versão integrada
 

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Recursos educativos sobre Libras e comunicação acessível no atendimento em saúde.">
+  <meta name="theme-color" content="#f8f8f1">
+  <title>Glossário | SinalVital</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/pages/glossario.css">
+  <script defer src="../assets/js/navigation.js"></script>
+  <script defer src="../assets/js/glossario.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="../index.html" aria-label="SinalVital, página inicial">Sinal<span>Vital</span></a>
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="primeiros-passos.html">Primeiros passos</a>
+        <a href="guia-rapido.html">Guia rápido</a>
+        <a href="glossario.html" aria-current="page">Glossário</a>
+        <a href="biblioteca-videos.html">Biblioteca de vídeos</a>
+        <details class="disclosure">
+          <summary>Mais</summary>
+          <div class="menu-panel">
+            <a href="quiz.html">Quiz educativo</a>
+            <a href="alfabeto-manual.html">Alfabeto manual</a>
+            <a href="sobre.html">Sobre o projeto</a>
+          </div>
+        </details>
+      </nav>
+      <nav class="mobile-nav" aria-label="Navegação principal">
+        <details class="disclosure" data-current>
+          <summary>Menu</summary>
+          <div class="menu-panel">
+            <a href="../index.html">Home</a>
+            <a href="primeiros-passos.html">Primeiros passos</a>
+            <a href="guia-rapido.html">Guia rápido</a>
+            <a href="glossario.html" aria-current="page">Glossário</a>
+            <a href="biblioteca-videos.html">Biblioteca de vídeos</a>
+            <a href="quiz.html">Quiz educativo</a>
+            <a href="alfabeto-manual.html">Alfabeto manual</a>
+            <a href="sobre.html">Sobre o projeto</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="wrap page-glossario" tabindex="-1">
+    <section class="module" aria-labelledby="glossario">
+      <div class="art-intro">
+        <div>
+          <h1 class="page-title" id="glossario" tabindex="-1">Glossário</h1>
+          <p>Encontre termos usados no atendimento em saúde.</p>
+        </div>
+        <img src="../assets/img/glossario-lupa.webp" alt="" width="510" height="510" loading="lazy" decoding="async">
+      </div>
+      <fieldset class="glossary-filters" id="glossary-filters" disabled>
+        <legend class="visually-hidden">Filtrar termos do glossário</legend>
+        <label for="glossary-search">Buscar termo
+          <input id="glossary-search" type="search" placeholder="Ex.: pressão arterial" autocomplete="off">
+        </label>
+        <label for="glossary-category">Categoria
+          <select id="glossary-category">
+            <option value="">Todas as categorias</option>
+          </select>
+        </label>
+      </fieldset>
+      <noscript><p>Ative o JavaScript para consultar o glossário.</p></noscript>
+      <p id="glossary-status">Carregando termos…</p>
+      <p class="visually-hidden" id="glossary-announcement" role="status" aria-atomic="true"></p>
+      <button type="button" class="glossary-button" id="glossary-reset" hidden>Limpar busca e filtros</button>
+      <div class="glossary-layout" id="glossary-layout">
+        <ul class="glossary-results" id="glossary-results"></ul>
+        <section class="glossary-panel" id="glossary-details" aria-labelledby="glossary-term" hidden>
+          <h3 id="glossary-term" tabindex="-1"></h3>
+          <button type="button" class="glossary-button" id="glossary-close">Fechar detalhes</button>
+          <h4>Definição</h4>
+          <p id="glossary-definition"></p>
+          <p id="glossary-source"></p>
+          <h4>Ilustração</h4>
+          <div id="glossary-illustration"></div>
+          <h4>Vídeo em Libras</h4>
+          <div id="glossary-video"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>Projeto de extensão · Disciplina de Libras · UCB</p>
+      <a href="sobre.html">Sobre o projeto</a>
+    </div>
+  </footer>
+</body>
+</html>

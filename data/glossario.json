@@ -1,0 +1,79 @@
+[
+  {
+    "id": "acolhimento",
+    "termo": "Acolhimento",
+    "categoria": "Atendimento e orientações",
+    "definicao": "Forma de receber e escutar uma pessoa que procura atendimento, prestando atenção ao que ela precisa.",
+    "fonte": {
+      "titulo": "Ministério da Saúde · Acolhimento",
+      "url": "https://bvsms.saude.gov.br/acolhimento/"
+    },
+    "ilustracao": null,
+    "videoLibras": null
+  },
+  {
+    "id": "exame-de-sangue",
+    "termo": "Exame de sangue",
+    "categoria": "Exames e procedimentos",
+    "definicao": "Análise feita em uma amostra de sangue para obter informações sobre a saúde da pessoa.",
+    "fonte": {
+      "titulo": "NHS · Blood tests (em inglês)",
+      "url": "https://www.nhs.uk/tests-and-treatments/blood-tests/"
+    },
+    "ilustracao": null,
+    "videoLibras": null
+  },
+  {
+    "id": "nausea",
+    "termo": "Náusea",
+    "categoria": "Sintomas",
+    "definicao": "Sensação de enjoo ou vontade de vomitar.",
+    "fonte": {
+      "titulo": "Manual MSD · Náuseas e vômitos",
+      "url": "https://www.msdmanuals.com/pt/profissional/dist%C3%BArbios-gastrointestinais/sintomas-dos-dist%C3%BArbios-gastrointestinais/n%C3%A1useas-e-v%C3%B4mitos"
+    },
+    "ilustracao": null,
+    "videoLibras": null
+  },
+  {
+    "id": "pressao-arterial",
+    "termo": "Pressão arterial",
+    "categoria": "Exames e procedimentos",
+    "definicao": "Pressão que o sangue exerce nas paredes das artérias. Essa medida também é conhecida como pressão do sangue.",
+    "fonte": {
+      "titulo": "Ministério da Saúde · Tratar a pressão alta é um ato de fé na vida",
+      "url": "https://bvsms.saude.gov.br/bvs/publicacoes/cartilha_pressao_fe_vida.pdf"
+    },
+    "ilustracao": null,
+    "videoLibras": null
+  },
+  {
+    "id": "tontura",
+    "termo": "Tontura",
+    "categoria": "Sintomas",
+    "definicao": "Termo usado para sensações como desequilíbrio, impressão de que vai desmaiar ou sensação de que tudo está girando.",
+    "fonte": {
+      "titulo": "Manual MSD · Tontura e vertigem",
+      "url": "https://www.msdmanuals.com/pt/casa/dist%C3%BArbios-do-ouvido-nariz-e-garganta/sintomas-das-doen%C3%A7as-dos-ouvidos/tontura-e-vertigem"
+    },
+    "ilustracao": null,
+    "videoLibras": null
+  },
+  {
+    "id": "anamnese",
+    "termo": "Anamnese",
+    "categoria": "Atendimento e orientações",
+    "definicao": "Entrevista em que o profissional conversa com a pessoa sobre o motivo da consulta e seu histórico de saúde para entender o que ela precisa.",
+    "fonte": {
+      "titulo": "INCA · Diagnóstico precoce do câncer de boca (2022), cap. 2, seção Anamnese",
+      "url": "https://www.saude.rj.gov.br/comum/code/MostrarArquivo.php?C=NTc2MDM%2C"
+    },
+    "ilustracao": {
+      "autorizada": true,
+      "src": "assets/img/prancheta-e-dialogo.webp",
+      "alt": "Prancheta e balões de diálogo que ilustram uma entrevista.",
+      "credito": "Ilustração do SinalVital, gerada com IA."
+    },
+    "videoLibras": null
+  }
+]
