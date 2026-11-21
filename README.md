@@ -16,10 +16,10 @@ HTML, CSS, JavaScript, JSON e GitHub Pages. Não haverá login, back-end ou banc
 
 ## Documentação
 
-- [Visão geral](docs/visao-geral.md)
-- [Fluxo de navegação](docs/fluxo-navegacao.md)
-- [Identidade visual](docs/identidade-visual.md)
-- [Roteiro da entrega acadêmica](docs/roteiro-entrega-academica.md)
+- [Visão geral](docs/01_visao-geral.md)
+- [Fluxo de navegação](docs/02_fluxo-navegacao.md)
+- [Identidade visual](docs/03_identidade-visual.md)
+- [Roteiro da entrega acadêmica](docs/04_roteiro-entrega-academica.md)
 
 ## Situação
 
