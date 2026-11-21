@@ -4,7 +4,7 @@
 **Instituição:** Universidade Católica de Brasília (UCB)  
 **Disciplina:** Libras  
 **Áreas:** Ciência da Computação, Biologia e Fisioterapia  
-**Status:** Planejamento da versão demonstrativa.
+**Status:** Escopo aprovado para desenvolvimento de uma primeira versão integrada; funcionalidades e acessibilidade ainda dependem de validação e testes.
 
 ## 1. Apresentação e problema
 
@@ -37,15 +37,19 @@ Promover a conscientização e a aprendizagem introdutória sobre acessibilidade
 ### Áreas aprovadas
 
 1. **Home:** banner e quatro cartões de navegação por necessidade.
-2. **Primeiros passos:** conceitos introdutórios de Libras, cultura surda e comunicação acessível.
-3. **Guia rápido:** boas práticas para acolhimento e atendimento inclusivo.
-4. **Glossário:** busca, filtros, descrição e mídia associada quando disponível.
+2. **Primeiros passos:** jornada educativa com três etapas navegáveis — Libras, Cultura surda e Comunicação acessível —, contendo revelação de conteúdo, caso fictício de Júlia e atividade de escolha com feedback.
+3. **Guia rápido:** boas práticas para acolhimento e atendimento inclusivo, incluindo uma situação fictícia de **anamnese acessível**, sem dados reais de pacientes.
+4. **Glossário:** busca sem diferenciação de acentos/maiúsculas, filtros, contagem de resultados, definições em linguagem acessível e painel de detalhes, com fonte identificada e mídia somente quando disponível; incluir **anamnese** após conferir definição e fonte.
 5. **Biblioteca de vídeos:** itens disponíveis e espaços explicitamente marcados como futuros.
 6. **Sobre o projeto:** equipe, cursos, propósito, referências e créditos.
 7. **Quiz educativo:** questões introdutórias, feedback imediato e resultados não persistidos.
 8. **Alfabeto manual:** recursos visuais de datilologia, com fontes e autorização de uso.
 
 **Quatro cartões na Home:** Quero aprender; Preparar atendimento; Consultar termo; Assistir vídeos.
+
+**Direção de arte para a versão integrada:** estrutura educativa rica em cartões e conteúdos; hero/banner com ilustração 3D, tipografia expressiva, composições assimétricas, superfícies menta e marfim, cartões com presença visual e animações suaves opcionais. No desktop, testar contêiner principal de aproximadamente **1.100–1.250 px**, ajustado à responsividade e à legibilidade. Inspirações: Ronas IT (*Education Website Design Concept*) e Cuberto (*Nursececlub Site Rewamp*), sem copiar elementos autorais. Detalhes em `03_identidade-visual.md`.
+
+**Prioridade da implementação:** concluir a experiência integrada sem aumentar o escopo para treinamento profissional formal. Ilustrações 3D não constituem demonstrações de Libras.
 
 ### Fora do escopo da primeira versão
 

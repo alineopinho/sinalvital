@@ -1,6 +1,6 @@
 # SinalVital — Fluxo de navegação
 
-**Estado:** proposta inicial aprovada para a estrutura; detalhes de telas sujeitos a revisão visual.
+**Estado:** arquitetura aprovada para implementação integrada; UX e comportamento em navegador devem ser testados antes da aprovação final.
 
 ## 1. Princípios
 
@@ -42,7 +42,17 @@ flowchart TD
 | Consultar termo | Glossário | Busca, categoria, detalhes e mídia |
 | Assistir vídeos | Biblioteca de vídeos | Reprodução somente de mídia existente |
 
-## 4. Interações e estados
+## 4. Jornada de Primeiros passos e Guia rápido
+
+**Primeiros passos:** `#primeiros-passos` → escolha livre entre três etapas (`1. Libras`, `2. Cultura surda`, `3. Comunicação acessível`). Mostrar indicador textual **Etapa X de 3** e controles **Anterior/Continuar**, com foco transferido de modo previsível ao título do novo painel. As etapas apresentam formatos complementares: revelação de informações, caso narrativo fictício de Júlia e atividade de escolha com feedback textual. Não pressupor que toda pessoa surda utiliza Libras.
+
+**Guia rápido:** `#guia-rapido` → orientações de acolhimento → caso fictício de **anamnese** (preferência de comunicação, diálogo diretamente com o paciente, privacidade e confirmação da compreensão) → quiz educativo ou Glossário. A simulação é pedagógica, não procedimento clínico, não coleta dados de saúde e não substitui acesso a comunicação qualificada.
+
+**Alfabeto manual:** recurso educativo complementar, ligado a Primeiros passos; não publicar demonstrações de configurações de mão sem fonte confiável e autorização.
+
+**Sobre:** identidade acadêmica, objetivos, créditos, fontes, limitações e parcerias somente quando confirmadas.
+
+## 5. Interações e estados
 
 **Glossário:** mostrar termos → buscar/filtrar → selecionar termo → visualizar descrição e imagem ou vídeo existente. Se não houver resultado, informar claramente e permitir nova busca. Se faltar vídeo, exibir estado "conteúdo planejado/indisponível".
 
@@ -52,9 +62,19 @@ flowchart TD
 
 **Navegação:** menu acessível por teclado, links compreensíveis, foco visível e saída previsível de painéis. Preferir comportamento natural de âncoras quando possível.
 
-## 5. Questões visuais pendentes
+## 6. Critérios para a implementação completa
 
-- Como apresentar cartões e menu no desktop e celular.
-- Se detalhes do glossário aparecerão num painel na mesma seção ou em um diálogo acessível.
-- Composição das imagens 3D e transições (sem depender delas para compreender o conteúdo).
-- Feedback de avaliação sobre clareza dos caminhos.
+- Preservar as oito áreas dentro de um único `index.html` e manter os quatro destinos da Home como links acionáveis com teclado.
+- Menu global: apresentar todas as oito áreas diretamente ou por agrupamentos claros; não esconder destinos sem alternativa de acesso; manter retorno à Home.
+- No Glossário: combinar busca normalizada com filtros, mostrar contagem, permitir limpar filtros e abrir um painel por vez sem perder o estado da busca; devolver o foco ao controle de origem quando o painel for fechado.
+- Na Biblioteca: diferenciar vídeos **disponíveis**, **planejados** e **indisponíveis**; não oferecer controles de reprodução fictícios.
+- No Quiz: perguntas e feedback educativo, resultado em memória, reinício e nenhuma coleta de dados pessoais.
+- Navegação com âncoras e gerenciamento de foco somente quando fizer sentido; checar abertura direta e atualização da URL no GitHub Pages.
+- Testar responsividade em 320px, 375px, tablet e desktop, foco por teclado, leitores de tela quando possível e `prefers-reduced-motion`.
+
+## 7. Questões visuais pendentes
+
+- Validar a apresentação final do menu em desktop e celular, sem perder a arquitetura aprovada.
+- Confirmar o comportamento do painel do Glossário na experiência real (no celular, exibir detalhes próximos do cartão selecionado).
+- Testar animações, imagens 3D e navegação com movimento reduzido, sem depender de efeitos para compreender o conteúdo.
+- Coletar feedback real sobre a clareza dos caminhos; não presumir validação por participantes antes da ação.

@@ -148,3 +148,16 @@ Referenciar as fontes **efetivamente utilizadas no texto e na metodologia**, con
 ---
 
 *Fonte: orientações das professoras fornecidas pelo grupo. Este documento reúne exigências acadêmicas e propostas atuais do SinalVital; itens em aberto não devem ser apresentados como realizados ou confirmados.*
+
+
+## 8. Atualização do produto digital — planejamento para a versão integrada
+
+Esta seção complementa o roteiro **sem alterar as exigências das professoras** e **sem afirmar a realização de atividades que ainda estão em desenvolvimento**.
+
+- **Produto previsto:** site estático educativo SinalVital, com oito áreas, navegação por quatro necessidades na Home e ilustrações 3D de apoio.
+- **Recursos pedagógicos:** jornada de Primeiros passos em três etapas; boas práticas de atendimento; situação fictícia de **anamnese acessível**; Glossário com termo Anamnese e fonte verificada; Biblioteca com disponibilidades identificadas; Quiz e Alfabeto manual com materiais autorizados.
+- **Demonstração à comunidade surda:** apresentar o produto visual e colher avaliação quando houver participação confirmada; registrar evidências somente de ações reais e autorizadas.
+- **Conteúdo em Libras:** não afirmar tradução, validação linguística, participação de docentes ou gravações como concluídas sem evidência e autorização.
+- **Recursos e orçamento:** HTML, CSS, JS, JSON e GitHub Pages poderão ser utilizados gratuitamente; custos de gravação, docentes, validação especializada e patrocínio devem ser tratados como **eventuais/não confirmados** até definição formal.
+- **Modelo acadêmico de referência:** o trabalho de Enfermagem de 2025 encaminhado pelo grupo é inspiração para capa institucional, estrutura, tabelas de cronograma e orçamento — não substitui as orientações específicas das professoras de 2026 nem implica copiar texto, orçamento ou atividades.
+- **Para o documento final:** atualizar o capítulo metodológico e os registros com o que foi efetivamente produzido, testado e apresentado; manter os nomes/cursos completos de todos os integrantes e a postagem individual de cada arquivo.

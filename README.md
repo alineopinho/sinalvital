@@ -10,9 +10,15 @@ Criar um site público e visual para introduzir boas práticas de comunicação 
 
 A Home será organizada por quatro necessidades: **Quero aprender**, **Preparar atendimento**, **Consultar termo** e **Assistir vídeos**. O projeto também contempla alfabeto manual, quiz educativo e informações sobre a iniciativa.
 
-## Tecnologias planejadas
+## Experiência prevista
 
-HTML, CSS, JavaScript, JSON e GitHub Pages. Não haverá login, back-end ou banco de dados externo.
+O site terá oito áreas: **Home**, **Primeiros passos**, **Guia rápido**, **Glossário**, **Biblioteca de vídeos**, **Sobre o projeto**, **Quiz educativo** e **Alfabeto manual**.
+
+A versão completa em desenvolvimento deverá combinar organização de uma **plataforma educativa moderna** com uma linguagem visual de **saúde acolhedora, ilustrações 3D e experiências interativas**. A jornada de Primeiros passos terá três etapas; o Guia rápido incluirá uma situação fictícia de **anamnese e comunicação acessível**. Materiais em Libras só serão apresentados como demonstrações quando houver fonte, autorização e validação adequadas.
+
+## Tecnologias
+
+HTML5, CSS3, JavaScript puro, JSON e publicação prevista no GitHub Pages. Um único `index.html`, sem login, back-end, banco de dados externo nem armazenamento permanente de respostas. O projeto deve funcionar com servidor HTTP local; abrir o HTML diretamente pelo sistema de arquivos pode impedir o carregamento de JSON.
 
 ## Documentação
 
@@ -23,6 +29,8 @@ HTML, CSS, JavaScript, JSON e GitHub Pages. Não haverá login, back-end ou banc
 
 ## Situação
 
-**Planejamento concluído em sua primeira versão; desenvolvimento ainda não iniciado.** Imagens, vídeos e sinais deverão respeitar autoria, licença de uso e validação linguística. A contribuição e avaliação pela comunidade surda serão documentadas de acordo com o que efetivamente for realizado.
+**Versão demonstrativa em desenvolvimento.** A Home, o Glossário e a jornada de Primeiros passos têm implementações experimentais; Guia rápido, Vídeos, Quiz, Alfabeto manual e Sobre estão previstos para a versão integrada. A conclusão de cada módulo dependerá de revisão e testes. Para executar localmente, use `python -m http.server 8000` na raiz e acesse `http://localhost:8000/`. O Glossário lê JSON via HTTP. Definições e materiais em Libras pendentes deverão permanecer identificados como provisórios ou indisponíveis.
+
+**Referências de direção de arte (inspiração, sem cópia):** [Education Website Design Concept — Ronas IT](https://dribbble.com/shots/25272282-Education-Website-Design-Concept) e [Nursececlub Site Rewamp — Cuberto](https://dribbble.com/shots/23467941-Nursececlub-Site-Rewamp).
 
 > O nome **SinalVital** é a proposta escolhida para o projeto. Antes de uso público ampliado, conferir possíveis nomes ou marcas semelhantes.
