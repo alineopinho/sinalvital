@@ -9,7 +9,12 @@
       "url": "https://bvsms.saude.gov.br/acolhimento/"
     },
     "ilustracao": null,
-    "videoLibras": null
+    "videoLibras": null,
+    "palavrasChave": [
+      "recepcao",
+      "receber paciente",
+      "escuta"
+    ]
   },
   {
     "id": "exame-de-sangue",
@@ -21,7 +26,12 @@
       "url": "https://www.nhs.uk/tests-and-treatments/blood-tests/"
     },
     "ilustracao": null,
-    "videoLibras": null
+    "videoLibras": null,
+    "palavrasChave": [
+      "coleta",
+      "sangue",
+      "hemograma"
+    ]
   },
   {
     "id": "nausea",
@@ -33,7 +43,12 @@
       "url": "https://www.msdmanuals.com/pt/profissional/dist%C3%BArbios-gastrointestinais/sintomas-dos-dist%C3%BArbios-gastrointestinais/n%C3%A1useas-e-v%C3%B4mitos"
     },
     "ilustracao": null,
-    "videoLibras": null
+    "videoLibras": null,
+    "palavrasChave": [
+      "enjoo",
+      "vomitar",
+      "vontade de vomitar"
+    ]
   },
   {
     "id": "pressao-arterial",
@@ -45,7 +60,12 @@
       "url": "https://bvsms.saude.gov.br/bvs/publicacoes/cartilha_pressao_fe_vida.pdf"
     },
     "ilustracao": null,
-    "videoLibras": null
+    "videoLibras": null,
+    "palavrasChave": [
+      "medir pressao",
+      "pressao do sangue",
+      "pressao alta"
+    ]
   },
   {
     "id": "tontura",
@@ -57,7 +77,12 @@
       "url": "https://www.msdmanuals.com/pt/casa/dist%C3%BArbios-do-ouvido-nariz-e-garganta/sintomas-das-doen%C3%A7as-dos-ouvidos/tontura-e-vertigem"
     },
     "ilustracao": null,
-    "videoLibras": null
+    "videoLibras": null,
+    "palavrasChave": [
+      "vertigem",
+      "desequilibrio",
+      "cabeca girando"
+    ]
   },
   {
     "id": "anamnese",
@@ -72,8 +97,14 @@
       "autorizada": true,
       "src": "assets/img/prancheta-e-dialogo.webp",
       "alt": "Prancheta e balões de diálogo que ilustram uma entrevista.",
-      "credito": "Ilustração do SinalVital, gerada com IA."
+      "credito": "Ilustração de apoio à explicação do termo."
     },
-    "videoLibras": null
+    "videoLibras": null,
+    "palavrasChave": [
+      "entrevista",
+      "historico de saude",
+      "consulta inicial",
+      "conversa com paciente"
+    ]
   }
 ]

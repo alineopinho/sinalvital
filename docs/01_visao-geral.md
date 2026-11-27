@@ -1,83 +1,101 @@
 # SinalVital — Visão geral
 
-**Título acadêmico provisório:** SinalVital: Protótipo Web Educativo para Acessibilidade Comunicacional de Pessoas Surdas na Área da Saúde  
+**Versão:** 2.0 — proposta para revisão do grupo (22/11/2026)  
+**Nome do projeto:** SinalVital — Comunicação que Cuida  
+**Frase central:** Cuidar também é saber se comunicar.  
 **Instituição:** Universidade Católica de Brasília (UCB)  
-**Disciplina:** Libras  
-**Áreas:** Ciência da Computação, Biologia e Fisioterapia  
-**Status:** Escopo aprovado para desenvolvimento de uma primeira versão integrada; funcionalidades e acessibilidade ainda dependem de validação e testes.
+**Disciplina:** Língua Brasileira de Sinais (Libras)  
+**Áreas da equipe:** Ciência da Computação, Biologia e Fisioterapia  
+**Estado:** reestruturação planejada; não equivale a implementação ou validação concluída.
 
 ## 1. Apresentação e problema
 
-O **SinalVital** é a proposta de um site educativo de acesso livre, com foco em comunicação acessível em consultas e atendimentos de saúde. Barreiras linguísticas e ausência de recursos acessíveis podem dificultar a compreensão de sintomas, procedimentos, receitas e orientações, assim como a autonomia de pacientes surdos.
+O **SinalVital** é um protótipo de site público, educativo e visual para **profissionais e estudantes da saúde** que desejam reconhecer barreiras de comunicação e melhorar o atendimento às pessoas surdas. A proposta surgiu de discussões do grupo e de observações da professora surda sobre dificuldades em consultas, anamnese e, em especial, na **compreensão de receitas e orientações escritas**.
 
-A proposta reúne conhecimentos das três áreas para oferecer um recurso visual destinado a **pessoas surdas** e, também, à aprendizagem introdutória de **estudantes e profissionais da saúde**. Não é serviço clínico nem substituto de intérprete ou de profissional fluente em Libras.
+Uma prescrição tecnicamente correta pode não ser plenamente compreendida se a explicação não considerar a língua e as preferências do paciente. Libras possui estrutura linguística própria; algumas pessoas surdas a utilizam como primeira língua, enquanto as experiências e a fluência em português escrito variam. **Não existe um único perfil comunicacional de pessoa surda.** Recursos visuais e português claro podem ajudar, mas **não substituem Libras, intérpretes qualificados ou outros meios necessários**.
 
-**Fundamentação legal inicial:** Lei nº 10.436/2002, Decreto nº 5.626/2005 e Lei nº 13.146/2015. A justificativa acadêmica deverá incorporar artigos científicos e conteúdos das aulas, com citações verificadas.
+O site não realiza atendimento, não produz nem altera prescrições, não traduz automaticamente textos para Libras e não forma profissionais fluentes na língua.
 
-## 2. Público-alvo
+## 2. Público, cliente e equipe
 
-- **Público de aprendizagem:** jovens e adultos estudantes ou profissionais da saúde.
-- **Público diretamente beneficiário e avaliador:** pessoas surdas que possam consultar e avaliar o material.
-- **Quantidade prevista:** a definir com o grupo, sem confundir previsão com participação realizada.
+- **Usuário principal:** profissional ou estudante da área da saúde que busca orientação introdutória e consulta rápida.
+- **Beneficiários esperados:** pessoas surdas que possam receber atendimento com comunicação mais acessível; o benefício deve ser avaliado, não presumido como resultado alcançado.
+- **Cliente e avaliadora acadêmica principal:** professora surda da disciplina; seu retorno deverá orientar ajustes na experiência e no conteúdo.
+- **Mediação de comunicação:** outra professora, atuando como intérprete da professora surda, conforme informado pelo grupo.
+- **Equipe de desenvolvimento acadêmico:** estudantes ouvintes dos cursos de Ciência da Computação, Biologia e Fisioterapia.
+- **Participantes da ação extensionista, faixa etária e quantidade:** a definir e registrar no roteiro de entrega.
 
-## 3. Objetivo geral
+## 3. Objetivos
 
-Promover a conscientização e a aprendizagem introdutória sobre acessibilidade comunicacional no atendimento à pessoa surda por meio de recursos educativos visuais e interativos.
+**Objetivo geral:** desenvolver um recurso educativo digital que auxilie profissionais da saúde a reconhecer a diversidade linguística das pessoas surdas e adotar práticas de comunicação mais acessíveis durante o atendimento.
 
-## 4. Objetivos específicos
+**Objetivos específicos:**
 
-1. Apresentar barreiras comunicacionais enfrentadas por pessoas surdas em atendimentos de saúde.
-2. Desenvolver um protótipo educativo com orientações de atendimento, glossário visual e recursos introdutórios relacionados à Libras.
-3. Demonstrar e avaliar o protótipo quanto à clareza visual, facilidade de navegação e contribuição para a aprendizagem.
+1. Apresentar barreiras comunicacionais, preferências individuais e aspectos introdutórios de Libras e cultura surda no contexto da saúde.
+2. Disponibilizar orientações práticas de atendimento, situação simulada de anamnese, glossário e **exemplo visual de orientação relativa a prescrições**, com conteúdo fictício e revisado.
+3. Demonstrar e avaliar o protótipo quanto à clareza, navegação, acessibilidade e contribuição educativa, registrando os retornos efetivamente obtidos.
 
-## 5. Produto visual e escopo
+## 4. Princípios pedagógicos
 
-**Produto:** site demonstrativo público, a ser publicado no GitHub Pages, com **oito páginas HTML estáticas**, HTML semântico, CSS, JavaScript e arquivos JSON como fonte de conteúdo (não banco de dados tradicional).
+- **Compreender:** reconhecer diferentes experiências linguísticas e culturais, sem generalizar.
+- **Respeitar:** dialogar diretamente com a pessoa surda, perguntar suas preferências e preservar autonomia, privacidade e consentimento.
+- **Aplicar:** consultar exemplos, realizar atividades curtas e refletir sobre condutas em situações fictícias.
 
-### Áreas aprovadas
+**Princípio editorial:** cada seção deve ajudar o visitante a compreender uma realidade, reconsiderar uma barreira ou aplicar uma prática. O site não deve depender apenas de textos extensos: cenas ilustradas, comparação de orientações e infográficos precisam transmitir informação útil.
 
-1. **Home:** banner e quatro cartões de navegação por necessidade.
-2. **Primeiros passos:** jornada educativa com três etapas navegáveis — Libras, Cultura surda e Comunicação acessível —, contendo revelação de conteúdo, caso fictício de Júlia e atividade de escolha com feedback.
-3. **Guia rápido:** boas práticas para acolhimento e atendimento inclusivo, incluindo uma situação fictícia de **anamnese acessível**, sem dados reais de pacientes.
-4. **Glossário:** busca sem diferenciação de acentos/maiúsculas, filtros, contagem de resultados, definições em linguagem acessível e painel de detalhes, com fonte identificada e mídia somente quando disponível; incluir **anamnese** após conferir definição e fonte.
-5. **Biblioteca de vídeos:** itens disponíveis e espaços explicitamente marcados como futuros.
-6. **Sobre o projeto:** equipe, cursos, propósito, referências e créditos.
-7. **Quiz educativo:** questões introdutórias, feedback imediato e resultados não persistidos.
-8. **Alfabeto manual:** recursos visuais de datilologia, com fontes e autorização de uso.
+## 5. Produto digital e páginas
 
-**Quatro cartões na Home:** Quero aprender; Preparar atendimento; Consultar termo; Assistir vídeos.
+**Formato proposto:** seis páginas HTML independentes, com CSS modular, JavaScript puro, dados em JSON e hospedagem prevista no GitHub Pages, sem login nem servidor de aplicação.
 
-**Direção de arte para a versão integrada:** estrutura educativa rica em cartões e conteúdos; hero/banner com ilustração 3D, tipografia expressiva, composições assimétricas, superfícies menta e marfim, cartões com presença visual e animações suaves opcionais. No desktop, testar contêiner principal de aproximadamente **1.100–1.250 px**, ajustado à responsividade e à legibilidade. Inspirações: Ronas IT (*Education Website Design Concept*) e Cuberto (*Nursececlub Site Rewamp*), sem copiar elementos autorais. Detalhes em `03_identidade-visual.md`.
+| Página | Papel | Recurso de destaque |
+| --- | --- | --- |
+| **Início** (`index.html`) | Apresentar e encaminhar | Banner ilustrado e quatro caminhos por necessidade |
+| **Atendimento** (`pages/atendimento.html`) | Orientar a consulta | Antes/durante/depois + anamnese fictícia interativa |
+| **Receitas acessíveis** (`pages/receitas.html`) | Apoiar explicações escritas | Comparação de exemplos e ficha educativa visual |
+| **Glossário** (`pages/glossario.html`) | Consulta rápida | Busca, categorias, fontes e detalhes do termo |
+| **Aprender** (`pages/aprender.html`) | Introdução à temática | Libras, cultura surda, alfabeto, vídeos e quiz |
+| **Sobre** (`pages/sobre.html`) | Transparência acadêmica | Propósito, equipe, referências e limitações |
 
-**Prioridade da implementação:** concluir a experiência integrada sem aumentar o escopo para treinamento profissional formal. Ilustrações 3D não constituem demonstrações de Libras.
+Os recursos anteriormente previstos como páginas independentes — Primeiros passos, Guia rápido, Biblioteca de vídeos, Quiz e Alfabeto manual — são **redistribuídos** nessas seis páginas. A arquitetura antiga de oito páginas fica substituída **como proposta**, sujeita à revisão antes da implementação.
 
-### Fora do escopo da primeira versão
+Os quatro caminhos da Home serão: **Preparar atendimento**, **Receitas acessíveis**, **Consultar glossário** e **Aprender sobre Libras**. O logotipo leva à Home; um menu expansível fornece acesso às cinco páginas internas. Ver `02_fluxo-navegacao.md`.
 
-Login, cadastro, gerenciamento de alunos, certificado, painel administrativo, back-end, banco de dados externo, persistência dos resultados do quiz, coleta de dados clínicos, atendimento a pacientes e tradução automática de Libras. Elementos 3D são ilustrativos: não representarão sinais como traduções validadas.
+## 6. Conteúdo de saúde e segurança
 
-## 6. Ação extensionista proposta
+### Atendimento e anamnese
 
-Etapas planejadas: (1) pesquisa e seleção de conteúdo; (2) desenho de fluxos e interfaces; (3) desenvolvimento; (4) revisão técnica e linguística dos materiais disponíveis; (5) demonstração e avaliação com participantes; (6) registro das evidências e reflexão sobre resultados.
+Apresentar recomendações de acolhimento e uma situação didática com personagem fictícia. Evitar atribuir características ou necessidades a todas as pessoas surdas. Não utilizar dados de pacientes reais.
 
-A realização de atividade com pessoas da comunidade, a disponibilidade de colaboradores e a quantidade de participantes ainda precisam ser confirmadas. **A apresentação em sala, isoladamente, não deve ser descrita como impacto comunitário já comprovado.**
+### Receitas e orientações
 
-### Contribuições esperadas
+Apresentar **modelos de apoio à explicação** de informações já prescritas, não uma receita pronta nem gerador de receita. O exemplo poderá organizar os campos: medicamento, dose, horários/frequência, duração e cuidados, **todos dependentes de informação profissional existente**. Não inventar esquema posológico, não substituir prescrição original e não permitir alteração automática de dados clínicos. A ficha e os exemplos devem ser revisados por profissional habilitado antes de serem apresentados como material educativo final.
 
-- **Comunidade surda:** ampliação do acesso a recursos informativos visuais e estímulo à acessibilidade nos serviços de saúde.
-- **Formação discente:** desenvolvimento interdisciplinar de tecnologia, comunicação, saúde e práticas de inclusão.
+### Glossário e Libras
 
-### Recursos, parcerias e custos
+Cada definição deve ter referência verificável; vídeos de sinais devem ter fonte, autorização e validação apropriadas. Quando um recurso ainda não existir, informar que está indisponível, sem simular reprodução. Ilustrações artísticas não demonstram Libras.
 
-Ferramentas gratuitas para prototipação, versionamento e hospedagem; equipamentos dos estudantes; imagens e vídeos autorizados. Possível colaboração de docentes, pessoas surdas fluentes em Libras, intérpretes e profissionais da saúde **a consultar, sem compromisso confirmado**. A UCB é a instituição de vínculo acadêmico, **não patrocinadora financeira confirmada**. Registrar separadamente eventuais custos de produção audiovisual ou revisão especializada.
+## 7. Direção de experiência e acessibilidade
 
-### Evidências e avaliação
+Preservar a identidade que está sendo explorada: azul-petróleo, verde-menta, marfim, cartões de presença visual, títulos expressivos e ilustrações acolhedoras. O design deve permitir **consulta rápida**, leitura clara, navegação por teclado, foco visível, boa responsividade e redução de movimento. Ilustrações informativas precisam de texto alternativo e não devem carregar sozinhas informação essencial. Diretrizes em `03_identidade-visual.md`.
 
-Link publicado, capturas de tela, histórico de alterações, registros de atividades autorizados, comentários ou questionários voluntários e síntese de melhorias. Diferenciar atividades planejadas das executadas e resultados esperados dos observados. Evitar dados pessoais desnecessários.
+## 8. Escopo técnico
 
-## 7. Referências iniciais a conferir no trabalho acadêmico
+**Incluído na primeira versão proposta:** seis páginas, menu acessível, navegação contextual, Home ilustrada, orientações práticas, simulação simples de anamnese, comparação educativa de orientações, modelo visual fictício, glossário pesquisável, conteúdos introdutórios e quiz simples sem persistência.
 
-- BRASIL. Lei nº 10.436, de 24 de abril de 2002. <https://www.planalto.gov.br/ccivil_03/leis/2002/l10436.htm>
-- BRASIL. Decreto nº 5.626, de 22 de dezembro de 2005. <https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/decreto/d5626.htm>
-- BRASIL. Lei nº 13.146, de 6 de julho de 2015. <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm>
+**Fora do escopo:** autenticação, banco externo, backend, atendimento clínico, coleta de dados de pacientes, geração de receita, tradução automática para Libras, formação certificada, videoaulas obrigatórias e contratação de profissionais para gravá-las. Ampliações futuras dependerão de recursos e validação.
 
-**Pendente:** literatura científica, materiais das aulas e normalização ABNT/UCB. Incluir apenas obras efetivamente consultadas e citadas.
+## 9. Ação extensionista e avaliação
+
+**Etapas propostas:** pesquisa e levantamento de situações-problema; seleção e revisão de fontes; desenho de fluxos e ilustrações; desenvolvimento; apresentação e avaliação com a professora surda e outros participantes **se confirmados**; documentação do feedback e das melhorias.
+
+A professora surda é a principal referência de avaliação acadêmica, **não uma validação automática de todo material linguístico ou clínico**. Registrar separadamente o que foi planejado e realizado. A apresentação em sala, isoladamente, não comprova impacto comunitário. Os critérios da entrega, cronograma, participantes e evidências permanecem no `04_roteiro-entrega-academica.md`, que requer sincronização posterior.
+
+## 10. Referências iniciais e pendências
+
+**Base legal já identificada no projeto anterior (conferir e citar de acordo com o texto final):**
+
+- Lei nº 10.436/2002 — <https://www.planalto.gov.br/ccivil_03/leis/2002/l10436.htm>
+- Decreto nº 5.626/2005 — <https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/decreto/d5626.htm>
+- Lei nº 13.146/2015 — <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm>
+
+**Pendente de confirmação:** nomes e responsabilidades da equipe; formato e momento da avaliação; fontes acadêmicas e clínicas efetivamente utilizadas; conteúdo final dos modelos de receita; mídias com licença e validação; identidade gráfica final; testes de acessibilidade; links publicados e evidências da ação.
