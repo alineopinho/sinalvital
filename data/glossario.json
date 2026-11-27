@@ -8,13 +8,15 @@
       "titulo": "Ministério da Saúde · Acolhimento",
       "url": "https://bvsms.saude.gov.br/acolhimento/"
     },
-    "ilustracao": null,
     "videoLibras": null,
     "palavrasChave": [
       "recepcao",
       "receber paciente",
       "escuta"
-    ]
+    ],
+    "exemploAtendimento": "Como podemos ajudar você?",
+    "configuracaoMao": null,
+    "exemploLibras": null
   },
   {
     "id": "exame-de-sangue",
@@ -25,13 +27,15 @@
       "titulo": "NHS · Blood tests (em inglês)",
       "url": "https://www.nhs.uk/tests-and-treatments/blood-tests/"
     },
-    "ilustracao": null,
     "videoLibras": null,
     "palavrasChave": [
       "coleta",
       "sangue",
       "hemograma"
-    ]
+    ],
+    "exemploAtendimento": "Você já realizou o exame de sangue?",
+    "configuracaoMao": null,
+    "exemploLibras": null
   },
   {
     "id": "nausea",
@@ -42,13 +46,15 @@
       "titulo": "Manual MSD · Náuseas e vômitos",
       "url": "https://www.msdmanuals.com/pt/profissional/dist%C3%BArbios-gastrointestinais/sintomas-dos-dist%C3%BArbios-gastrointestinais/n%C3%A1useas-e-v%C3%B4mitos"
     },
-    "ilustracao": null,
     "videoLibras": null,
     "palavrasChave": [
       "enjoo",
       "vomitar",
       "vontade de vomitar"
-    ]
+    ],
+    "exemploAtendimento": "Você está sentindo enjoo?",
+    "configuracaoMao": null,
+    "exemploLibras": null
   },
   {
     "id": "pressao-arterial",
@@ -59,13 +65,15 @@
       "titulo": "Ministério da Saúde · Tratar a pressão alta é um ato de fé na vida",
       "url": "https://bvsms.saude.gov.br/bvs/publicacoes/cartilha_pressao_fe_vida.pdf"
     },
-    "ilustracao": null,
     "videoLibras": null,
     "palavrasChave": [
       "medir pressao",
       "pressao do sangue",
       "pressao alta"
-    ]
+    ],
+    "exemploAtendimento": "Vamos medir sua pressão arterial?",
+    "configuracaoMao": null,
+    "exemploLibras": null
   },
   {
     "id": "tontura",
@@ -76,13 +84,15 @@
       "titulo": "Manual MSD · Tontura e vertigem",
       "url": "https://www.msdmanuals.com/pt/casa/dist%C3%BArbios-do-ouvido-nariz-e-garganta/sintomas-das-doen%C3%A7as-dos-ouvidos/tontura-e-vertigem"
     },
-    "ilustracao": null,
     "videoLibras": null,
     "palavrasChave": [
       "vertigem",
       "desequilibrio",
       "cabeca girando"
-    ]
+    ],
+    "exemploAtendimento": "Você está sentindo tontura?",
+    "configuracaoMao": null,
+    "exemploLibras": null
   },
   {
     "id": "anamnese",
@@ -93,18 +103,15 @@
       "titulo": "INCA · Diagnóstico precoce do câncer de boca (2022), cap. 2, seção Anamnese",
       "url": "https://www.saude.rj.gov.br/comum/code/MostrarArquivo.php?C=NTc2MDM%2C"
     },
-    "ilustracao": {
-      "autorizada": true,
-      "src": "assets/img/prancheta-e-dialogo.webp",
-      "alt": "Prancheta e balões de diálogo que ilustram uma entrevista.",
-      "credito": "Ilustração de apoio à explicação do termo."
-    },
     "videoLibras": null,
     "palavrasChave": [
       "entrevista",
       "historico de saude",
       "consulta inicial",
       "conversa com paciente"
-    ]
+    ],
+    "exemploAtendimento": "Você pode me contar sobre seu histórico de saúde?",
+    "configuracaoMao": null,
+    "exemploLibras": null
   }
 ]

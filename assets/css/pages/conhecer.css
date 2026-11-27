@@ -1,0 +1,20 @@
+/* Refinamento visual exclusivo desta página. */
+.education-icon { display:block; width:3.1rem; height:3.1rem; padding:.55rem; box-sizing:content-box; color:var(--accent); background:rgba(255,255,255,.55); border-radius:1rem; margin-bottom:1rem; }
+.three-grid .info-card h3 { margin-top:.35rem; }
+.ines-resource { gap:.65rem; margin-top:.85rem; border-radius:999px; max-width:100%; }
+.ines-resource:hover { background:var(--ink); color:white; }
+
+main .split-block a.ines-resource{display:inline-flex;align-items:center;justify-content:center;gap:.65rem;background:var(--accent);color:#fff;border:1px solid var(--accent);border-radius:999px;padding:.85rem 1.4rem;font-weight:750;text-decoration:none;min-height:2.75rem;}
+main .split-block a.ines-resource:hover{background:var(--ink);color:#fff;}
+
+#conteudo #ines-cta {display:inline-flex;align-items:center;justify-content:center;gap:.65rem;padding:.9rem 1.5rem;min-height:3rem;background:var(--accent);color:#fff;border:1px solid var(--accent);border-radius:999px;text-decoration:none;font:inherit;font-weight:750;line-height:1.4;margin-top:1rem;}
+#conteudo #ines-cta:hover {background:var(--ink);color:#fff;}
+#conteudo #ines-cta svg {width:1.25rem;height:1.25rem;flex-shrink:0;}
+
+/* Recursos linguísticos: imagem compacta, sem determinar a altura do bloco. */
+#conteudo .conhecer-recursos {align-items:center;grid-template-columns:minmax(0,1.5fr) minmax(0,.7fr);}
+#conteudo .conhecer-recursos > img {width:min(100%,21rem);height:auto;min-height:0;max-height:none;aspect-ratio:1;object-fit:contain;justify-self:center;align-self:center;}
+@media(max-width:47.99rem){
+ #conteudo .conhecer-recursos {grid-template-columns:1fr;}
+ #conteudo .conhecer-recursos > img {width:min(100%,16rem);}
+}

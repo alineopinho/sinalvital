@@ -5,8 +5,8 @@
 <title>Glossário | SinalVital</title>
 <link rel="icon" type="image/png" href="../assets/img/favicon-sinalvital.png">
 <link rel="apple-touch-icon" href="../assets/img/favicon-sinalvital.png">
-<link rel="stylesheet" href="../assets/css/global.css"><link rel="stylesheet" href="../assets/css/components.css"><link rel="stylesheet" href="../assets/css/pages/glossario.css"><link rel="stylesheet" href="../assets/css/editorial-wide.css">
-<script defer src="../assets/js/navigation.js"></script><script defer src="../assets/js/glossario.js"></script>
+<link rel="stylesheet" href="../assets/css/global.css"><link rel="stylesheet" href="../assets/css/components.css"><link rel="stylesheet" href="../assets/css/editorial-wide.css"><link rel="stylesheet" href="../assets/css/pages/glossario.css?v=5">
+<script defer src="../assets/js/navigation.js"></script><script defer src="../assets/js/glossario.js?v=5" onerror="document.addEventListener('DOMContentLoaded',function(){document.getElementById('glossary-status').textContent='Arquivo glossario.js não carregado. Confira a pasta assets/js.';})"></script>
 </head><body><a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
 <header class="site-header"><div class="wrap header-inner">
 <a class="brand" href="../index.html" aria-label="SinalVital — ir para página inicial"><img class="brand-logo" src="../assets/img/logo-sinalvital-libras.png" width="367" height="76" alt="SinalVital — Saúde acessível em LIBRAS"></a>
@@ -16,5 +16,17 @@
 <div><strong>RECURSOS</strong><a href="../pages/glossario.html" aria-current="page">Glossário</a><a href="../pages/conhecer.html" >Conhecer</a></div>
 <div><strong>PROJETO</strong><a href="../pages/sobre.html" >Sobre o projeto</a></div>
 </nav></details></div></header>
-<main id="conteudo" class="wrap" tabindex="-1"><section class="simple-hero"><div><p class="eyebrow">CONSULTA RÁPIDA</p><h1>Glossário da saúde</h1><p class="lead">Pesquise um termo de saúde, filtre por categoria e selecione “Ver detalhes” para consultar a definição e a fonte.</p></div><img src="../assets/img/glossario-lupa.webp" alt="" width="720" height="480" decoding="async"></section><section class="content-section" id="pesquisa"><div class="glossary-toolbar" id="glossary-filters"><label for="glossary-search">O que você quer encontrar?<input id="glossary-search" type="search" placeholder="Ex.: pressão, enjoo, entrevista" autocomplete="off"></label><label for="glossary-category">Categoria<select id="glossary-category"><option value="">Todas as categorias</option></select></label></div><p id="glossary-status" role="status">Carregando termos...</p><button type="button" id="glossary-reset" class="outline-button" hidden>Limpar filtros</button><div id="glossary-layout" class="glossary-layout"><ul id="glossary-results" class="term-grid"></ul><section id="glossary-details" class="term-detail" aria-labelledby="glossary-term" hidden><div class="detail-head"><h2 id="glossary-term" tabindex="-1"></h2><button type="button" id="glossary-close" class="outline-button">Fechar</button></div><p id="glossary-definition"></p><p id="glossary-source"></p><div id="glossary-illustration"></div><div id="glossary-video"></div></section></div><noscript>Ative o JavaScript para carregar o glossário.</noscript></section></main>
+<main id="conteudo" class="wrap glossary-page" tabindex="-1">
+<section class="simple-hero"><div><p class="eyebrow">CONSULTA RÁPIDA</p><h1>Glossário da saúde</h1><p class="lead">Encontre termos de saúde e explore recursos visuais para apoiar a comunicação em Libras no atendimento.</p></div><img src="../assets/img/glossario-lupa.webp" alt="" width="510" height="510" decoding="async"></section>
+<section class="content-section" id="pesquisa" aria-label="Consultar glossário">
+<div class="sv-search"><label for="glossary-search">O que você quer encontrar?</label><div class="sv-search-row"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#146356" stroke-width="1.7" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="glossary-search" type="text" role="searchbox" inputmode="search" placeholder="Ex.: enjoo, pressão, entrevista" autocomplete="off"><button id="glossary-reset" type="button" class="outline-button" hidden>Limpar</button></div></div>
+<div id="glossary-filters" class="sv-filters" aria-label="Filtrar por categoria"></div>
+<p id="glossary-status" role="status">Carregando termos...</p>
+<section id="glossary-details" class="sv-detail" aria-labelledby="glossary-term" hidden>
+<div class="sv-detail-grid"><div><p id="glossary-label" class="eyebrow"></p><h2 id="glossary-term" tabindex="-1"></h2><p id="glossary-definition"></p><div class="sv-example"><span class="eyebrow">EXEMPLO NO ATENDIMENTO</span><p id="glossary-example"></p><small>Exemplo em português</small></div><p id="glossary-source" class="sv-source"></p></div><div><div class="sv-video" id="glossary-video"></div><p class="sv-caption">Demonstrações em Libras devem ter fonte confiável e revisão linguística.</p></div></div>
+<details id="glossary-extra" class="sv-extra"><summary>Conheça melhor o sinal</summary><div class="sv-extra-grid"><div><h3>Configuração de mão</h3><div id="glossary-hand"></div></div><div><h3>Exemplo em Libras</h3><div id="glossary-phrase"></div></div></div></details>
+<div class="sv-detail-footer"><a href="https://dicionario.ines.gov.br/" target="_blank" rel="noopener noreferrer">Consultar dicionário do INES ↗</a><button type="button" id="glossary-close" class="outline-button">Fechar detalhes</button></div>
+</section>
+<div id="glossary-results"></div><noscript>Ative o JavaScript para consultar o glossário.</noscript>
+</section></main>
 <footer class="site-footer"><div class="wrap footer-inner"><p><strong>SinalVital</strong> · Comunicação que cuida · UCB</p><a href="../pages/sobre.html">Sobre o projeto</a></div></footer></body></html>
