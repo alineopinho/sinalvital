@@ -1,14 +1,18 @@
-# Prompt utilizado no desenvolvimento
-PROMPT-NOVA-CONVERSA.md
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Ajustes de versão
-AJUSTES-V1-3.md
-AJUSTES-V1-4.md
-AJUSTES-V1-5.md
-AJUSTES-V1-6.md
-AJUSTES-V1-7.md
-AJUSTES-V1-8.md
+# Configurações locais de editores
+.vscode/
+.idea/
 
-# Teste e Revisão
-REVISAO-EDITORIAL.md
-TESTE-LOCAL.md
+# Arquivos temporários
+*.tmp
+*.log
+*.bak
+*.zip
+
+# Cache do Python
+__pycache__/
+*.pyc
