@@ -1,166 +1,162 @@
 # SinalVital — Fluxo de navegação
 
-**Versão:** 2.0 — proposta para revisão (22/11/2026)  
-**Status:** especificação de UX e navegação; implementação e testes pendentes.  
-**Relacionados:** `01_visao-geral.md`, `03_identidade-visual.md`.
+**Revisão:** 27/11/2026 · fluxo da versão implementada  
+**Relacionados:** [Visão geral](01_visao-geral.md) · [Identidade visual](03_identidade-visual.md)
 
 ## 1. Modelo de navegação
 
-O SinalVital é um **guia de consulta e aprendizagem não sequencial**. O profissional deve chegar ao conteúdo pela sua necessidade, sem precisar concluir uma aula anterior. A Home apresenta quatro caminhos principais; o menu permite acesso a todas as cinco páginas internas. Os conteúdos podem se conectar por links contextuais.
+A aplicação oferece consulta não linear: o visitante escolhe uma área conforme sua necessidade, sem etapas obrigatórias de aprendizagem. O logotipo retorna à Home. O menu Explorar áreas está disponível em todas as páginas e apresenta cinco destinos internos, organizados em Atendimento, Recursos e Projeto. O rodapé fornece acesso a Sobre.
 
-**Seis páginas HTML:**
+| Página | Rota |
+| --- | --- |
+| Início | `index.html` |
+| Atendimento | `pages/atendimento.html` |
+| Orientações acessíveis | `pages/orientacoes.html` |
+| Glossário | `pages/glossario.html` |
+| Conhecer | `pages/conhecer.html` |
+| Sobre | `pages/sobre.html` |
 
-| Página | Caminho | Destino do menu |
-| --- | --- | --- |
-| Home | `index.html` | Acessada pelo logotipo, sem item “Início” duplicado |
-| Atendimento | `pages/atendimento.html` | Atendimento |
-| Receitas acessíveis | `pages/receitas.html` | Receitas acessíveis |
-| Glossário | `pages/glossario.html` | Glossário |
-| Aprender | `pages/aprender.html` | Aprender |
-| Sobre | `pages/sobre.html` | Sobre o projeto |
-
-As antigas páginas Primeiros passos, Guia rápido, Biblioteca de vídeos, Quiz e Alfabeto manual serão redistribuídas como **seções**, não desaparecerão como temas.
-
-## 2. Mapa geral
+## 2. Mapa geral — base para o Apêndice A
 
 ```mermaid
 flowchart TD
-    H["Home / logotipo SinalVital"] --> A["Atendimento"]
-    H --> R["Receitas acessíveis"]
-    H --> G["Glossário"]
-    H --> L["Aprender"]
-    H -. "Menu" .-> S["Sobre"]
-    A --> AN["Anamnese simulada"]
-    A --> G
-    A --> R
-    R --> EX["Comparação e modelo visual"]
-    R --> A
-    G --> FD["Busca, filtros e detalhes"]
-    L --> LB["Libras e diversidade"]
-    L --> AL["Alfabeto manual"]
-    L --> VD["Vídeos validados disponíveis"]
-    L --> Q["Quiz educativo"]
+    H[Início]
+    M[Menu Explorar áreas]
+    A[Atendimento]
+    O[Orientações acessíveis]
+    G[Glossário]
+    C[Conhecer]
+    S[Sobre o projeto]
+    H -->|Quatro cartões| A
+    H --> O
+    H --> G
+    H --> C
+    H -->|Busca por termo| G
+    H -.-> M
+    M --> A
+    M --> O
+    M --> G
+    M --> C
+    M --> S
+    A -->|Consultar anamnese| G
+    A -->|Explorar orientações| O
+    O -->|Ver práticas de atendimento| A
+    S -->|Consultar fontes dos verbetes| G
+    A --> A1[Simulação de anamnese]
+    O --> O1[Guia para impressão]
+    G --> G1[Painel de detalhes]
+    C --> C1[Materiais do INES]
 ```
 
-As setas representam caminhos disponíveis, não sequência obrigatória.
+O diagrama destaca os principais caminhos, não uma sequência obrigatória. Por legibilidade, o menu compartilhado, o retorno à Home pelo logotipo e o link de rodapé para Sobre são representados de forma simplificada. O bloco C1 é um destino externo.
 
-## 3. Cabeçalho e menu expansível
+## 3. Cabeçalho e navegação compartilhada
 
-**Cabeçalho fechado:** logotipo/nome à esquerda e botão **“Explorar áreas”** à direita.
+O menu usa os elementos nativos `<details>` e `<summary>`, com links HTML reais no painel. `navigation.js` atualiza o texto entre Explorar áreas e Fechar áreas, fecha o menu por Escape ou clique externo e devolve o foco ao acionador ao pressionar Escape. O link da página interna ativa possui `aria-current="page"`.
 
-**Logotipo:** link para Home com nome acessível “SinalVital — ir para a página inicial”. Na Home, o link pode retornar ao início do documento. Não exibir link visual “Início” adicional.
+O link de salto direciona para `#conteudo` e o script posiciona o foco no elemento principal. A apresentação do menu passa de grupos em colunas para uma coluna em telas estreitas.
 
-**Painel aberto:**
+## 4. Início
 
-- **ATENDIMENTO:** Atendimento; Receitas acessíveis.
-- **RECURSOS:** Glossário; Aprender.
-- **PROJETO:** Sobre o projeto.
+- Banner com a mensagem central e formulário de pesquisa.
+- Pesquisa enviada por GET para `pages/glossario.html?q=...`.
+- Quatro cartões: Preparar atendimento, Explicar orientações, Consultar um termo e Conhecer a LIBRAS.
+- Bloco sobre diferentes formas de comunicação, com link Entender melhor para Conhecer.
 
-**Comportamentos obrigatórios:**
+## 5. Atendimento — fluxo da simulação
+
+A página apresenta os atalhos Continue consultando logo abaixo do banner, seguidos pelos cartões Antes, Durante e Depois. A seção `#anamnese` contém a apresentação do exemplo e o painel interativo, exibidos alternadamente.
+
+```mermaid
+flowchart TD
+    I[Apresentação da anamnese] -->|Iniciar simulação| P[Mostrar situação atual]
+    P --> R[Escolher uma das três alternativas]
+    R --> F[Feedback educativo e avanço habilitado]
+    F --> D{Última situação?}
+    D -->|Não: próxima situação| P
+    D -->|Sim: concluir| E[Mensagem de conclusão]
+    E -->|Recomeçar| P
+    P -->|Voltar ao exemplo| I
+    F -->|Voltar ao exemplo| I
+    E -->|Voltar ao exemplo| I
+```
+
+As três situações são Primeiro contato, Durante a anamnese e Ao finalizar o atendimento. O progresso visual acompanha o texto de etapa. A escolha recebe feedback, independentemente de estar correta; não existe bloqueio por erro, nota ou armazenamento de respostas. Iniciar ou recomeçar reinicializa a atividade.
+
+Atalhos: `glossario.html?termo=anamnese` e `orientacoes.html`.
+
+## 6. Orientações acessíveis — fluxo de impressão
+
+A leitura é livre: contexto, práticas Organize/Explique/Confirme, comparação de horários (`#comparacao`), recursos visuais (`#recursos`) e material educativo (`#modelo`). O cartão Uma orientação não é só um papel contém o link de retorno contextual para Atendimento.
+
+```mermaid
+flowchart LR
+    O[Orientações acessíveis] --> I[Imprimir guia]
+    I --> W[window.print]
+    W --> P[Pré-visualização do navegador]
+    P --> S[Imprimir ou salvar como PDF]
+    P --> C[Cancelar e retornar à página]
+```
+
+O guia não é exibido integralmente na tela normal. O layout de impressão isola o conteúdo educativo e utiliza formato A4. Não há preenchimento de receita, envio de dados ou arquivo PDF pré-gerado obrigatório.
+
+## 7. Glossário — fluxo de consulta
+
+```mermaid
+flowchart TD
+    I[Entrada no Glossário] --> L[Carregar JSON]
+    L --> D{Carregamento bem-sucedido?}
+    D -->|Não| E[Mensagem de erro]
+    D -->|Sim| Q[Aplicar consulta e categoria]
+    Q --> R{Há resultados?}
+    R -->|Não| V[Estado vazio]
+    R -->|Sim| T{Pesquisa textual ativa?}
+    T -->|Não| C[Seções por categoria]
+    T -->|Sim| B[Termos encontrados]
+    C --> S[Consultar termo]
+    B --> S
+    S --> P[Painel superior de detalhes]
+    P --> X[Expandir informações complementares]
+    X --> P
+    P -->|Fechar ou Escape| C1[Retornar foco ao cartão]
+    C -->|Filtrar ou pesquisar| Q
+    B -->|Filtrar ou pesquisar| Q
+    V -->|Limpar ou pesquisar novamente| Q
+    P -->|Alterar pesquisa ou filtro| Q
+```
+
+### Regras de interação
 
 | Ação | Resultado |
 | --- | --- |
-| Acionar “Explorar áreas” | Abrir painel; `aria-expanded=true`; permitir alcançar os links |
-| Acionar “Fechar áreas” | Fechar painel; `aria-expanded=false` |
-| Pressionar `Escape` com painel aberto | Fechar e devolver foco ao botão de abertura |
-| Selecionar destino | Navegar para a página ou seção real |
-| Navegar pelo teclado | Ordem previsível, foco visível, controles nativos |
-| Abrir menu no celular | Exibir as mesmas cinco opções em coluna |
-| Visitar outra página | Destacar o link correspondente com `aria-current="page"` |
+| Entrar sem consulta | Agrupar os seis verbetes por categoria. |
+| Digitar `enjoo` ou `enj` | Localizar Náusea pelas palavras-chave. |
+| Digitar uma letra | Buscar apenas a inicial do nome do termo. |
+| Selecionar categoria | Restringir os resultados à categoria escolhida. |
+| Limpar | Apagar consulta e categoria, restaurar agrupamento e foco na busca. |
+| Percorrer cartões | Rolagem horizontal manual; setas somente quando há conteúdo excedente. |
+| Consultar termo | Abrir painel acima dos resultados, marcar cartão selecionado e focar título. |
+| Conheça melhor o sinal | Expandir configuração de mão e exemplo em Libras. |
+| Fechar detalhes / Escape | Ocultar painel e devolver foco ao cartão. |
 
-Usar `button` para controle e `a href` para destinos, com `aria-controls` vinculado ao painel. O fechamento por clique fora é **opcional**; não deve substituir botão ou Escape. Como o menu é uma navegação expansível comum, não atribuir `role="menu"` sem implementar o respectivo padrão de teclado.
+O painel inclui categoria, termo, definição, exemplo em português e fonte. O vídeo, a configuração de mão e o exemplo em Libras têm mensagens de indisponibilidade enquanto não houver materiais próprios. O link para o Dicionário do INES abre referência externa.
 
-## 4. Home — `index.html`
+Os parâmetros `q` e `termo` preenchem a consulta inicial, sem abrir automaticamente o detalhe. Alterar busca ou filtro fecha os detalhes e recalcula os resultados. O carregamento possui mensagem inicial e tratamento de falha; sem JavaScript, há aviso próprio.
 
-**Seções e links:**
+## 8. Conhecer e Sobre
 
-| Seção / ID | Conteúdo | Ação / destino |
-| --- | --- | --- |
-| `#inicio` | Banner “Cuidar também é saber se comunicar.” + ilustração | “Explorar atendimento” → `pages/atendimento.html` |
-| `#caminhos` | Quatro cartões grandes ilustrados | Atendimento → `pages/atendimento.html`; Receitas → `pages/receitas.html`; Glossário → `pages/glossario.html`; Aprender → `pages/aprender.html` |
-| `#diversidade` | Infográfico introdutório sobre diferentes formas de comunicação | “Conhecer mais” → `pages/aprender.html#diversidade-surda` |
-| `#projeto` | Resumo acadêmico e limites | “Sobre o projeto” → `pages/sobre.html` |
+**Conhecer:** leitura introdutória de Libras e diversidade surda, três cartões educativos e seção de materiais linguísticos. O botão Acessar o INES leva ao portal institucional. O alfabeto manual é apresentado conceitualmente, sem biblioteca de letras ou vídeos incorporados.
 
-A Home orienta por necessidade. Não duplicar páginas completas na Home. Card inteiro pode ser um link acessível; evitar um segundo link redundante dentro do mesmo cartão.
+**Sobre:** apresenta desafio, proposta, três áreas acadêmicas, contexto institucional, quatro limitações e base legal. O link para o Glossário permite consultar fontes individuais. As referências legais são links externos.
 
-## 5. Atendimento — `pages/atendimento.html`
+## 9. Verificação da navegação
 
-| Seção / ID | Conteúdo | Interação / destino |
-| --- | --- | --- |
-| `#atendimento` | Contexto e ilustração | Leitura introdutória |
-| `#etapas` | Antes, durante e depois do atendimento | Três blocos ou painéis acessíveis, com conteúdo visível sem animação obrigatória |
-| `#anamnese` | Definição, perguntas e cuidados | “Consultar termo anamnese” → `glossario.html?termo=anamnese` |
-| `#simulacao` | Caso fictício de Júlia | Cenário → 2–3 alternativas → feedback → tentar novamente |
-| `#continuar` | Recursos relacionados | “Consultar glossário” → `glossario.html`; “Receitas acessíveis” → `receitas.html` |
+A desenvolvedora informou que testou o site publicado e aprovou seu funcionamento. Para manutenção, repetir os casos abaixo após mudanças:
 
-**Simulação:** não coletar dados reais, não pontuar qualidade clínica; alternativas e feedback devem ser revisados quanto ao conteúdo educativo. Não representar que toda pessoa surda tem a mesma preferência de comunicação.
+- Abrir todas as páginas, testar menu, logotipo, rodapé e atalhos contextuais.
+- Enviar busca pela Home; testar prefixo, acentos, categoria, estado vazio, limpeza e retorno de foco.
+- Percorrer as três situações da simulação, voltar e reiniciar.
+- Abrir a impressão e conferir que somente o guia está presente.
+- Conferir responsividade, navegação por teclado e ausência de rotas antigas.
 
-## 6. Receitas acessíveis — `pages/receitas.html`
-
-| Seção / ID | Conteúdo | Interação / destino |
-| --- | --- | --- |
-| `#receitas` | Problema e finalidade educativa | Explicação curta e ilustrada |
-| `#comparacao` | Orientação difícil × orientação reorganizada | Alternância ou comparação lado a lado, com texto acessível para ambos os exemplos |
-| `#modelo` | Ficha demonstrativa de orientação | Campos **não preenchidos clinicamente** ou com conteúdo fictício identificado |
-| `#orientacoes` | Boas práticas de explicação | Infográfico de orientações e verificação da compreensão |
-| `#material` | Material complementar | Download/impressão **somente se arquivo real, revisado e disponível** |
-
-**Restrição:** o site não é prescritor e não deve sugerir dose, tratamento, medicamento ou horários reais. O modelo complementa a prescrição e a comunicação qualificada, não as substitui. Não publicar botão de download inativo.
-
-## 7. Glossário — `pages/glossario.html`
-
-| Seção / ID | Conteúdo | Interação |
-| --- | --- | --- |
-| `#glossario` | Apresentação | Orientação breve |
-| `#pesquisa` | Busca e categorias | Busca ignorando diferenças de caixa e acentos, limpar filtros |
-| `#resultados` | Contagem e cartões | Selecionar termo e abrir detalhes |
-
-**Detalhe do termo:** nome, categoria, definição, contexto de uso, fonte e ilustração pertinente. Vídeo em Libras apenas com material existente, autorizado e validado; se ausente, indicar indisponibilidade sem botão de reprodução.
-
-**Ligação direta:** `glossario.html?termo=anamnese` deve ler o parâmetro `termo`, executar a busca e oferecer acesso ao resultado; se não encontrado, mostrar estado vazio claro. Não é obrigatório abrir automaticamente um modal.
-
-**Estados:** carregando, sucesso, nenhum resultado, falha de carregamento. Se abrir painel/modal, gerenciar foco, Escape e retorno ao acionador; no celular, priorizar detalhe próximo ao cartão ou apresentação acessível.
-
-## 8. Aprender — `pages/aprender.html`
-
-| Seção / ID | Conteúdo | Interação / destino |
-| --- | --- | --- |
-| `#aprender` | Introdução | Breve explicação ilustrada |
-| `#libras` | Libras como língua com estrutura própria | Conteúdo visual e textual introdutório |
-| `#diversidade-surda` | Cultura, autonomia e preferências comunicacionais | Cartões e exemplos sem generalizações |
-| `#alfabeto` | Alfabeto manual | Consulta letra a letra, somente com materiais confiáveis |
-| `#videos` | Materiais audiovisuais | Acessar/reproduzir apenas quando disponíveis e autorizados |
-| `#quiz` | Atividade educativa | Iniciar → responder → feedback → resultado → reiniciar |
-
-O quiz é introdutório, não oferece certificado e não armazena respostas. O conteúdo de Libras precisa de fonte e, quando aplicável, validação linguística.
-
-## 9. Sobre — `pages/sobre.html`
-
-| Seção / ID | Conteúdo |
-| --- | --- |
-| `#sobre` | Origem e justificativa |
-| `#objetivos` | Objetivos geral e específicos |
-| `#equipe` | Participantes e cursos, após confirmação |
-| `#metodologia` | Etapas planejadas/realizadas e avaliação |
-| `#referencias` | Bibliografia, fontes, licenças e créditos |
-| `#limitacoes` | Natureza educativa e limites de uso |
-
-Não afirmar parcerias, participação comunitária ou validações ainda não realizadas.
-
-## 10. Regras transversais
-
-- Links HTML reais entre documentos; usar caminhos relativos conferidos em cada página.
-- Todo documento terá `<main id="conteudo">` e link de salto “Ir para o conteúdo”.
-- Cabeçalho e rodapé serão consistentes; atualizar os seis HTML quando um elemento compartilhado mudar.
-- Teclado, foco visível, textos de controles, contraste e comportamento responsivo são requisitos de todas as páginas.
-- Conteúdo não pode depender apenas de cor, ícone, animação ou ilustração.
-- Respeitar `prefers-reduced-motion`; testar telas de 320 px, 375 px, tablet e desktop.
-- Não criar links para arquivos, vídeos ou funcionalidades que não existem.
-
-## 11. Critérios de aceite e decisões pendentes
-
-**Aceite da navegação:** todas as seis páginas carregam; logotipo retorna à Home; menu abre/fecha e funciona por teclado; quatro cartões levam aos destinos corretos; âncoras e consulta direta de anamnese funcionam; nenhuma rota está quebrada; informações indisponíveis são honestamente sinalizadas.
-
-**Pendentes de revisão:** redação final dos links; formato de painel da simulação; modelo clínico e PDF de orientação; fontes e vídeos em Libras; conteúdo do quiz; avaliação com professora surda; migração efetiva da arquitetura anterior.
-
-Este arquivo define **o fluxo desejado**, não confirma a existência de todas as páginas ou recursos no código atual.
+Esses casos são roteiro de regressão, não um relatório de testes automatizados ou certificação de acessibilidade.

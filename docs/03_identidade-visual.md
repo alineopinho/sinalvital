@@ -1,147 +1,110 @@
-# SinalVital — Identidade visual e linguagem educativa
+# SinalVital — Identidade visual
 
-**Versão:** 2.0 — proposta para revisão (22/11/2026)  
-**Estado:** direção de arte documentada; imagens finais, identidade gráfica e testes ainda pendentes.  
-**Referência:** preservar características do protótipo visual apresentado pelo grupo, sem copiar marcas de terceiros.
+**Revisão:** 27/11/2026 · identidade aplicada à versão acadêmica  
+**Relacionados:** [Visão geral](01_visao-geral.md) · [Fluxo de navegação](02_fluxo-navegacao.md)
 
-## 1. Essência da marca
+## 1. Conceito visual
 
-**Nome:** SinalVital  
-**Assinatura:** Comunicação que Cuida  
-**Frase principal:** Cuidar também é saber se comunicar.
+**SinalVital — Comunicação que Cuida** combina a temática da saúde com a comunicação acessível. A frase central, Cuidar também é saber se comunicar, sintetiza o propósito educativo.
 
-A experiência deve ser **acolhedora, profissional, acessível e visualmente explicativa**, sem infantilizar pessoas surdas nem apresentar um único perfil de paciente. O propósito não é apenas informar: é incentivar o profissional a **compreender, respeitar e aplicar** práticas de comunicação mais acessível.
+A direção de arte combina composição editorial, títulos serifados, superfícies em tons suaves, cartões arredondados e ilustrações 3D de aparência clay. A experiência deve ser acolhedora e profissional, com informação visual útil, sem infantilizar pessoas surdas ou simular sinais de Libras com ilustrações artísticas.
 
-O nome combina comunicação/sinais e saúde/sinais vitais. Nenhum símbolo gráfico deve ser confundido com tradução de um sinal real de Libras.
+## 2. Marca
 
-## 2. Direção visual a preservar
+| Recurso | Arquivo |
+| --- | --- |
+| Logotipo horizontal | `assets/img/logo-sinalvital-libras.png` |
+| Ícone do navegador | `assets/img/favicon-sinalvital.png` |
 
-- **Paleta exploratória:** azul-petróleo ou verde-azulado para identidade, verde-menta e marfim para superfícies, branco quente e grafite para textos. **Valores HEX finais pendentes** de escolha e teste de contraste.
-- **Tipografia:** títulos com personalidade editorial (serifada, se legível), textos e controles em fonte de leitura confortável. Nomes/famílias de fonte ainda não aprovados.
-- **Composição:** grandes blocos visuais, espaçamento generoso, cartões arredondados, hierarquia evidente e alternância equilibrada de superfícies.
-- **Linguagem:** frases curtas, títulos orientados à ação, explicações claras, sem tom infantil ou excesso de jargão.
-- **Animações:** discretas e funcionais, nunca necessárias para compreender conteúdo.
+O logotipo é usado no cabeçalho das seis páginas e funciona como link para a Home. O favicon também é referenciado como ícone de atalho em dispositivos compatíveis. A marca atual é um recurso PNG, não o antigo símbolo SVG provisório.
 
-Não usar cores como único indicador de categoria, status ou resposta correta. Testar contraste de texto e controles antes de fixar a paleta.
+![Logotipo SinalVital](../assets/img/logo-sinalvital-libras.png)
 
-## 3. Cabeçalho e navegação
+## 3. Paleta e tokens
 
-**Padrão:** logotipo/nome à esquerda; botão “Explorar áreas” à direita; painel expansível organizado em **Atendimento**, **Recursos** e **Projeto**.
+Valores definidos em `assets/css/global.css`:
 
-- O logotipo retorna à Home; não duplicar botão visual “Início”.
-- Painel com hierarquia clara e respiro entre grupos, sem parecer um catálogo de cursos.
-- Estados de foco, hover e aberto/fechado visíveis.
-- Mesmos destinos e comportamento em celular, em coluna.
-- O estado aberto/fechado precisa ter informação textual e semântica, não apenas mudança de ícone.
-
-Comportamento completo em `02_fluxo-navegacao.md`.
-
-## 4. Sistema de imagens: cada imagem deve cumprir uma função
-
-| Tipo | Finalidade | Exemplos e cuidados |
+| Token | HEX | Aplicação |
 | --- | --- | --- |
-| **Ilustração de ambientação** | Situar a proposta e criar acolhimento | Cena de recepção ou consulta; não inventar gestos que pareçam sinais linguísticos |
-| **Cena educativa** | Mostrar uma situação com pessoas e escolhas | Personagem fictícia Júlia durante anamnese; respeito à autonomia, sem caricaturas |
-| **Infográfico** | Explicar relação, sequência ou processo | Antes/durante/depois, organização de orientações e confirmação da compreensão |
-| **Documento ilustrado** | Demonstrar material de apoio | Ficha fictícia de orientação baseada em campos de uma prescrição; nunca apresentar como receita válida |
-| **Ilustração de termo** | Ajudar a reconhecer conceito | Objetos/contextos de saúde, diagramas precisos quando validados |
-| **Mídia linguística** | Mostrar conteúdo em Libras | Somente vídeos/imagens de fonte confiável, autorizados e validados; 3D decorativo não substitui sinais |
+| `--ink` | `#143837` | Texto principal, verde-petróleo escuro. |
+| `--muted` | `#3a5651` | Texto secundário. |
+| `--accent` | `#146356` | Ações, links, foco e destaque. |
+| `--paper` | `#fbf9f2` | Fundo marfim. |
+| `--mint` | `#dceee4` | Superfícies e painéis. |
+| `--line` | `#bdcfc5` | Bordas e divisórias. |
+| `--lilac` | `#ece7f6` | Superfície complementar. |
+| `--peach` | `#f8e9db` | Superfície complementar quente. |
+| `--mist` | `#e5eff2` | Superfície complementar azulada. |
+| `--surface` | `#fffdf8` | Cartões e superfícies claras. |
 
-**Regra editorial:** nenhuma página deve depender apenas de longos parágrafos, mas tampouco deve receber imagens sem valor pedagógico. Ilustrações contextuais podem ser 3D suaves; infográficos e modelos de orientação devem privilegiar legibilidade e precisão.
+No Glossário, Sintomas utiliza pêssego, Exames e procedimentos utiliza azul suave e Atendimento e orientações utiliza menta. Cada categoria é também identificada por texto; a cor não é o único identificador.
 
-**Créditos e arquivos:** registrar origem, licença e autorizações de todos os recursos. Preferir SVG para ícones/diagramas e WebP otimizado para ilustrações, quando apropriado. Nunca publicar imagem de pessoa identificável sem autorização.
+Os tokens são a base compartilhada. Existem valores locais nos CSS específicos para detalhes e estados de componentes; não se trata de uma biblioteca de design independente ou de uma auditoria completa de tokens.
 
-## 5. Especificação visual por página
+## 4. Tipografia e dimensionamento
 
-### 5.1. Início
+| Propriedade | Valor |
+| --- | --- |
+| Fonte de leitura (`--font-body`) | `system-ui, sans-serif` |
+| Fonte de destaque (`--font-display`) | `Georgia, "Times New Roman", serif` |
+| Altura de linha base | `1.55` |
+| Altura de controle base | `2.75rem` |
+| Raio de painel base | `1.35rem` |
+| Largura máxima base | `76rem` |
+| Largura máxima editorial | `88rem` (sobrescrita em `editorial-wide.css`) |
+| Raio editorial de imagem | `1.5rem`, reduzido em telas estreitas |
 
-- **Hero:** duas colunas no desktop; título “Cuidar também é saber se comunicar.”, descrição breve, CTA “Explorar atendimento” e uma ilustração grande de interação respeitosa entre profissional e paciente.
-- **Quatro cartões em grade 2 × 2:** Preparar atendimento, Receitas acessíveis, Consultar glossário, Aprender sobre Libras. Título, uma frase e **ilustração própria por assunto**; cartão inteiro como link.
-- **Diversidade de comunicação:** infográfico curto com diferentes possibilidades/preferências, sem sugerir que qualquer uma serve para todos.
-- **Sobre em poucas linhas:** chamar para a página institucional sem repetir toda a justificativa.
+Títulos grandes usam escalas fluidas (`clamp()`); textos e controles privilegiam leitura direta. Não há necessidade de instalar fontes externas.
 
-### 5.2. Atendimento
+## 5. Componentes e composição
 
-- Hero com cena ilustrada de atendimento.
-- **Antes / durante / depois:** três quadros ligados por uma sequência visual clara; manter o texto completo acessível em todas as telas.
-- **Anamnese simulada:** cenas ilustradas consistentes da mesma personagem fictícia; opções com feedback textual e uma explicação do porquê da escolha. A imagem não determina a resposta.
+| Componente | Diretriz aplicada |
+| --- | --- |
+| Cabeçalho | Logo à esquerda, menu arredondado à direita, navegação em grupos. |
+| Banner | Texto editorial e ilustração, com composição ampla no desktop. |
+| Cartões | Bordas suaves, títulos claros, fundos variados e ícones quando úteis. |
+| Ações | Botão primário destacado, secundário com contorno e links contextuais. |
+| Painel de consulta | Fundo menta, definição à esquerda e espaço audiovisual à direita no desktop. |
+| Simulação | Introdução ilustrada substituída pela atividade; progresso segmentado e feedback textual. |
+| Comparação | Dois cartões de orientações, forma convencional e apoio visual. |
+| Impressão | Guia educativo independente da composição normal da tela. |
 
-### 5.3. Receitas acessíveis
+As páginas usam HTML e CSS específicos sobre componentes compartilhados. Ícones SVG incorporados ao HTML e ilustrações locais permitem comunicação visual sem bibliotecas de ícones externas.
 
-- Introdução visual ao problema da compreensão de orientações.
-- **Comparação lado a lado:** apresentação difícil versus orientação reorganizada, ambas identificadas como exemplos fictícios. No celular, empilhar os exemplos com títulos inequívocos.
-- **Ficha educativa:** hierarquia visível para nome, dose, frequência/horário, duração e cuidados **conforme prescrição existente**; não inventar dados reais nem gerar prescrições.
-- Usar pictogramas apenas como reforço, sempre acompanhados por texto. Não reduzir a compreensão a desenhos de comprimidos, relógios ou cores.
+## 6. Direção visual por página
 
-### 5.4. Glossário
+| Página | Composição | Recurso gráfico de referência |
+| --- | --- | --- |
+| Início | Banner panorâmico, busca e quatro cartões ilustrados. | `home-hero-editorial.png` |
+| Atendimento | Banner, atalhos, três etapas com ícones e caso de Júlia. | `guia-saude.webp`, `anamnese-cena.webp` |
+| Orientações | Contexto em duas colunas, comparação, relógios, calendário e pictogramas; CTA de impressão. | `prancheta-e-dialogo.webp` |
+| Glossário | Banner compacto, pesquisa, filtros, cartões horizontais e painel superior. | `glossario-lupa.webp` |
+| Conhecer | Banner, três cartões educativos e bloco de recursos com botão INES. | `cultura-surda.webp`, `alfabeto-aprendizagem.webp` |
+| Sobre | Contraste entre desafio e proposta, equipe, contexto e referências em cartões. | `sobre-colaboracao.webp` |
 
-- Priorizar busca e resultados acima de ilustrações decorativas extensas.
-- Cartões com termo, categoria, definição breve e imagem útil quando existir.
-- Painel de detalhes com fonte, contexto e indicação honesta de mídia disponível ou indisponível.
+As imagens 3D são usadas principalmente para ambientação, navegação e contextualização. Os exemplos de horários, duração e cuidados priorizam SVG, texto e elementos gráficos simples. O Glossário não apresenta ilustração conceitual no detalhe do termo: o espaço principal fica reservado à futura demonstração em Libras.
 
-### 5.5. Aprender
+## 7. Responsividade e acessibilidade
 
-- Combinar microconteúdos, cenas ilustradas e comparações sobre cultura e diversidade surda.
-- Alfabeto manual apenas com imagens corretas, de procedência adequada.
-- Vídeos com miniaturas e status explícito; quiz com progresso, alternativas claras e feedback textual.
+A composição utiliza Grid, Flexbox, larguras fluidas e media queries. No desktop, textos e imagens compartilham a largura disponível; em telas menores, os blocos passam para uma coluna. O Glossário mantém rolagem horizontal localizada nos cartões, sem movimento automático. O painel de detalhes e os recursos complementares são empilhados em telas estreitas.
 
-### 5.6. Sobre
+A base visual define foco com contorno contrastante; a busca do Glossário usa destaque no contêiner via `:focus-within`. Imagens decorativas podem usar `alt=""`; imagens informativas recebem descrição. O progresso da simulação possui equivalente textual, e as cores de categoria são acompanhadas de rótulos. O código considera a preferência de movimento reduzido no deslocamento dos cartões e em componentes compartilhados.
 
-- Identidade acadêmica mais discreta; equipe, metodologia, limitações, referências e créditos em blocos de leitura simples.
-- Não usar imagens decorativas que desviem atenção de fontes e informações relevantes.
+Essas medidas descrevem recursos de implementação. Não constituem certificação WCAG ou comprovação de contraste integral. Recomenda-se registrar testes de teclado, ampliação, leitores de tela e diferentes tamanhos de janela.
 
-## 6. Componentes reutilizáveis
+## 8. Imagens, referências criativas e materiais linguísticos
 
-- **Cabeçalho / menu** e **rodapé** consistentes nas seis páginas.
-- **Botão primário**, **secundário** e **link textual**, com foco e estados reconhecíveis.
-- **Cartão de navegação** com ilustração e descrição curta.
-- **Cartão de conteúdo** e **cartão de termo**, sem duplicação de estilos.
-- **Painel de detalhe** para glossário e feedback de atividades.
-- **Infográfico por etapas**, com ordem de leitura lógica e equivalente textual.
-- **Comparador de orientações** que funcione também sem animação.
-- **Aviso de conteúdo indisponível** com texto claro, sem controles enganosos.
-
-Organizar estilos em `assets/css/global.css` (tokens e base), `components.css` (componentes compartilhados) e `assets/css/pages/` (regras específicas). Media queries junto do componente ou seção correspondente. Evitar conflito entre seletores e duplicação de cores.
-
-## 7. Responsividade
-
-- **Desktop:** contêiner indicativo de 1.100–1.250 px, com ajustes conforme legibilidade; hero com texto e imagem equilibrados; cartões em duas colunas.
-- **Tablet:** reorganizar imagens, textos e cartões conforme o espaço disponível.
-- **Celular:** conteúdo em coluna, menu expandido verticalmente, controles confortáveis, comparações empilhadas e sem rolagem horizontal desnecessária.
-- Verificar 320 px, 375 px, tablet e desktop. A ordem visual não deve contradizer a ordem de leitura do HTML.
-
-## 8. Acessibilidade e movimento
-
-- Navegação integral por teclado; foco visível e indicação textual do estado de componentes.
-- Contraste testado; texto dimensionável sem quebra de layout; não depender de ícones ou cores isolados.
-- Imagens informativas com `alt` adequado; decorativas com `alt=""` quando apropriado.
-- Textos claros, sem infantilização e sem presumir que todas as pessoas surdas têm a mesma experiência com português escrito.
-- Vídeos com legenda e recursos linguísticos adequados ao contexto e disponibilidade, identificando fonte e autorização.
-- Respeitar `prefers-reduced-motion`; transições de entrada e hover não devem impedir interação ou leitura.
-- Validar conteúdos de Libras por pessoas qualificadas antes de apresentá-los como demonstração correta.
-
-## 9. Logotipo e referências criativas
-
-**Logotipo ainda em definição.** A proposta anterior sugeria um “S” derivado de estetoscópio, com possível balão de diálogo; alternativas permanecem exploratórias. Testar leitura em tamanho pequeno e monocromático. Conferir uso de nomes/marcas semelhantes antes de divulgação ampliada.
-
-**Inspirações visuais anteriores (não copiar):**
+Referências de direção de arte já registradas nas versões anteriores:
 
 - [Education Website Design Concept — Ronas IT](https://dribbble.com/shots/25272282-Education-Website-Design-Concept)
 - [Nursececlub Site Rewamp — Cuberto](https://dribbble.com/shots/23467941-Nursececlub-Site-Rewamp)
 
-Referências indicam ritmo, hierarquia, cartões e ilustrações; não autorizam reprodução de artes, componentes ou marcas protegidas.
+Essas referências orientam composição, hierarquia e ritmo visual; não representam autorização para reproduzir materiais de terceiros. Os arquivos locais devem ter origem e condições de uso registradas antes de eventual divulgação ampliada. Este documento não comprova licenciamento individual das imagens.
 
-## 10. Critérios de revisão visual
+A produção de sinais, alfabeto manual e exemplos em Libras fica reservada a uma etapa futura, com profissionais qualificados, revisão linguística e autorização de imagem. Ilustrações 3D, ícones e pictogramas não são demonstrações linguísticas.
 
-- [ ] Home tem quatro caminhos claros e ilustrados.
-- [ ] Todas as páginas têm função reconhecível e conteúdo visual útil.
-- [ ] Menu é consistente e navegável por teclado.
-- [ ] Ilustrações carregam sem erros e têm licença registrada.
-- [ ] Cenas de atendimento não estereotipam pessoas surdas.
-- [ ] Materiais de Libras possuem fonte e validação.
-- [ ] Exemplos de receita são fictícios, seguros e claramente identificados.
-- [ ] Componentes apresentam foco/feedback e não dependem só de cores.
-- [ ] Layout é confortável no celular.
-- [ ] Paleta e tipografia finais foram testadas antes de serem declaradas aprovadas.
+## 9. Registros visuais e manutenção
 
-**Pendentes:** seleção/criação das ilustrações finais, valores dos tokens, logotipo, revisão do conteúdo por docentes e especialistas, testes em navegadores e validação da experiência.
+A interface das seis páginas foi aprovada visualmente pela desenvolvedora após os refinamentos e o teste de publicação relatado. Para o Apêndice B, utilizar capturas da versão efetivamente publicada, com legendas identificando página e recurso. Recomenda-se registrar a Home, as três etapas e a simulação de Atendimento, a comparação e a impressão de Orientações, a busca e o detalhe do Glossário, Conhecer e Sobre.
+
+As capturas devem mostrar o estado real do protótipo, inclusive as mensagens de indisponibilidade dos vídeos quando pertinentes. Não apresentar mídias futuras como funcionalidades concluídas. Em alterações posteriores, preservar a identidade compartilhada e atualizar este documento quando houver mudanças de tokens, componentes ou composição.

@@ -1,101 +1,155 @@
-# SinalVital — Visão geral
+# SinalVital — Visão geral técnica
 
-**Versão:** 2.0 — proposta para revisão do grupo (22/11/2026)  
-**Nome do projeto:** SinalVital — Comunicação que Cuida  
-**Frase central:** Cuidar também é saber se comunicar.  
-**Instituição:** Universidade Católica de Brasília (UCB)  
-**Disciplina:** Língua Brasileira de Sinais (Libras)  
-**Áreas da equipe:** Ciência da Computação, Biologia e Fisioterapia  
-**Estado:** reestruturação planejada; não equivale a implementação ou validação concluída.
+**Revisão:** 27/11/2026 · versão acadêmica implementada  
+**Projeto:** SinalVital — Comunicação que Cuida  
+**Instituição:** Universidade Católica de Brasília (UCB) · disciplina de Libras
 
-## 1. Apresentação e problema
+## 1. Propósito e escopo
 
-O **SinalVital** é um protótipo de site público, educativo e visual para **profissionais e estudantes da saúde** que desejam reconhecer barreiras de comunicação e melhorar o atendimento às pessoas surdas. A proposta surgiu de discussões do grupo e de observações da professora surda sobre dificuldades em consultas, anamnese e, em especial, na **compreensão de receitas e orientações escritas**.
+O SinalVital é uma aplicação web estática de caráter educativo, destinada principalmente a profissionais e estudantes da saúde. Apoia a comunicação com pessoas surdas por meio de orientações, exemplos visuais, consulta de termos e uma atividade simulada. A proposta interdisciplinar reúne Ciência da Computação, Biologia e Fisioterapia.
 
-Uma prescrição tecnicamente correta pode não ser plenamente compreendida se a explicação não considerar a língua e as preferências do paciente. Libras possui estrutura linguística própria; algumas pessoas surdas a utilizam como primeira língua, enquanto as experiências e a fluência em português escrito variam. **Não existe um único perfil comunicacional de pessoa surda.** Recursos visuais e português claro podem ajudar, mas **não substituem Libras, intérpretes qualificados ou outros meios necessários**.
+O projeto não pressupõe uma única experiência surda: a língua e as preferências de comunicação devem ser respeitadas. O protótipo não presta atendimento clínico, não gera prescrições, não traduz automaticamente para Libras e não substitui intérpretes qualificados.
 
-O site não realiza atendimento, não produz nem altera prescrições, não traduz automaticamente textos para Libras e não forma profissionais fluentes na língua.
+## 2. Arquitetura
 
-## 2. Público, cliente e equipe
+A solução adota uma arquitetura multipágina (MPA), com HTML, CSS, JavaScript nativo e dados JSON. Não há framework, backend de aplicação, autenticação, banco de dados, coleta de informações de pacientes ou processo de build. O GitHub Pages distribui os arquivos estáticos; a lógica interativa é executada no navegador.
 
-- **Usuário principal:** profissional ou estudante da área da saúde que busca orientação introdutória e consulta rápida.
-- **Beneficiários esperados:** pessoas surdas que possam receber atendimento com comunicação mais acessível; o benefício deve ser avaliado, não presumido como resultado alcançado.
-- **Cliente e avaliadora acadêmica principal:** professora surda da disciplina; seu retorno deverá orientar ajustes na experiência e no conteúdo.
-- **Mediação de comunicação:** outra professora, atuando como intérprete da professora surda, conforme informado pelo grupo.
-- **Equipe de desenvolvimento acadêmico:** estudantes ouvintes dos cursos de Ciência da Computação, Biologia e Fisioterapia.
-- **Participantes da ação extensionista, faixa etária e quantidade:** a definir e registrar no roteiro de entrega.
+```mermaid
+flowchart LR
+    U[Usuário] --> B[Navegador]
+    H[GitHub Pages] -->|HTTP: arquivos estáticos| B
+    B --> P[HTML: seis páginas]
+    P --> C[CSS: base, componentes e páginas]
+    P --> J[JavaScript nativo]
+    J -->|fetch HTTP| D[data/glossario.json]
+    J --> S[Estado temporário da interface]
+```
 
-## 3. Objetivos
+O servidor HTTP local é necessário para o carregamento confiável do JSON; Python e Live Server são alternativas de execução, não dependências da aplicação. Consulte o [README](../README.md).
 
-**Objetivo geral:** desenvolver um recurso educativo digital que auxilie profissionais da saúde a reconhecer a diversidade linguística das pessoas surdas e adotar práticas de comunicação mais acessíveis durante o atendimento.
+## 3. Estrutura de código
 
-**Objetivos específicos:**
+```text
+index.html
+pages/
+  atendimento.html
+  orientacoes.html
+  glossario.html
+  conhecer.html
+  sobre.html
+assets/
+  css/
+    global.css
+    components.css
+    editorial-wide.css
+    pages/
+      index.css
+      site.css
+      atendimento.css
+      orientacoes.css
+      glossario.css
+      conhecer.css
+      sobre.css
+  js/
+    navigation.js
+    anamnese.js
+    glossario.js
+  img/                 # recursos gráficos locais
+data/                  # dados estáticos
+  glossario.json
+docs/                  # documentação técnica
+```
 
-1. Apresentar barreiras comunicacionais, preferências individuais e aspectos introdutórios de Libras e cultura surda no contexto da saúde.
-2. Disponibilizar orientações práticas de atendimento, situação simulada de anamnese, glossário e **exemplo visual de orientação relativa a prescrições**, com conteúdo fictício e revisado.
-3. Demonstrar e avaliar o protótipo quanto à clareza, navegação, acessibilidade e contribuição educativa, registrando os retornos efetivamente obtidos.
+| Módulo | Responsabilidade |
+| --- | --- |
+| `global.css` | Tokens, reset, tipografia base, foco e utilitários de acessibilidade. |
+| `components.css` | Cabeçalho, menu, rodapé e componentes compartilhados. |
+| `editorial-wide.css` | Composição ampla, ajustes responsivos e acabamento editorial. |
+| `pages/site.css` | Estilos compartilhados por páginas internas que o carregam. |
+| CSS específico | Aparência e comportamento visual de cada página. |
+| `navigation.js` | Menu expansível, Escape, clique externo e foco do link de salto. |
+| `anamnese.js` | Cenários, alternativas, feedback e progresso da simulação. |
+| `glossario.js` | Carregamento, normalização, busca, filtros, cartões, painel e mídias. |
+| `glossario.json` | Fonte de dados dos verbetes. |
 
-## 4. Princípios pedagógicos
+A modularização reduz a necessidade de modificar estilos globais ao ajustar uma página. O cabeçalho e rodapé são replicados nos HTML; mudanças estruturais nesses elementos devem ser sincronizadas entre os seis documentos.
 
-- **Compreender:** reconhecer diferentes experiências linguísticas e culturais, sem generalizar.
-- **Respeitar:** dialogar diretamente com a pessoa surda, perguntar suas preferências e preservar autonomia, privacidade e consentimento.
-- **Aplicar:** consultar exemplos, realizar atividades curtas e refletir sobre condutas em situações fictícias.
+## 4. Funcionalidades implementadas
 
-**Princípio editorial:** cada seção deve ajudar o visitante a compreender uma realidade, reconsiderar uma barreira ou aplicar uma prática. O site não deve depender apenas de textos extensos: cenas ilustradas, comparação de orientações e infográficos precisam transmitir informação útil.
+| Página | Funcionalidade |
+| --- | --- |
+| Início | Banner, formulário GET de busca no Glossário, quatro caminhos ilustrados e acesso à página Conhecer. |
+| Atendimento | Antes/durante/depois, atalhos contextuais e simulação de anamnese com três situações fictícias. |
+| Orientações acessíveis | Comparação entre apresentação convencional e visual, exemplos de horários, duração, quantidade e cuidados; guia educativo para impressão. |
+| Glossário | Seis termos em três categorias, pesquisa por prefixo, filtros, navegação horizontal manual e painel superior de consulta. |
+| Conhecer | Introdução à Libras, diversidade surda, autonomia e referência ao INES. |
+| Sobre | Problema, proposta, áreas da equipe, contexto acadêmico, limites e referências legais. |
 
-## 5. Produto digital e páginas
+### Simulação
 
-**Formato proposto:** seis páginas HTML independentes, com CSS modular, JavaScript puro, dados em JSON e hospedagem prevista no GitHub Pages, sem login nem servidor de aplicação.
+O estado é mantido em memória (`pos`, `answered`). O botão Iniciar simulação substitui a apresentação do caso pelo painel interativo. Cada situação apresenta três alternativas; após a escolha, as opções são desabilitadas, é exibido feedback textual e a próxima etapa é habilitada. Ao concluir, há mensagem educativa e possibilidade de recomeçar. Não existe pontuação persistente, cadastro ou avaliação clínica.
 
-| Página | Papel | Recurso de destaque |
+### Impressão
+
+O guia de Orientações permanece oculto na visualização normal. O botão Imprimir guia aciona `window.print()`; regras `@media print` isolam o material e definem o formato A4. O navegador controla a saída para impressora ou PDF. Trata-se de um guia fixo para profissionais, não de formulário de prescrição.
+
+### Glossário
+
+`fetch()` carrega `data/glossario.json`. A busca normaliza caixa e acentos, tokeniza a consulta e compara prefixos de palavras do termo e das palavras-chave, sem pesquisar a definição. Para uma única letra, considera a inicial do termo; nas demais consultas, prioriza correspondências no nome. Todos os tokens precisam corresponder. O filtro de categoria é aplicado em conjunto com a busca.
+
+Sem consulta textual, os termos são agrupados por categoria; com consulta, ficam em Termos encontrados. O painel superior apresenta definição, exemplo em português, fonte e espaço para demonstração em Libras. A seção expansível reserva configuração de mão e exemplo em Libras. A ausência de mídia é sinalizada explicitamente.
+
+## 5. Modelo de dados
+
+O JSON contém uma lista de objetos. Os seis verbetes atuais são Acolhimento, Anamnese, Exame de sangue, Pressão arterial, Náusea e Tontura.
+
+| Campo | Tipo | Finalidade |
 | --- | --- | --- |
-| **Início** (`index.html`) | Apresentar e encaminhar | Banner ilustrado e quatro caminhos por necessidade |
-| **Atendimento** (`pages/atendimento.html`) | Orientar a consulta | Antes/durante/depois + anamnese fictícia interativa |
-| **Receitas acessíveis** (`pages/receitas.html`) | Apoiar explicações escritas | Comparação de exemplos e ficha educativa visual |
-| **Glossário** (`pages/glossario.html`) | Consulta rápida | Busca, categorias, fontes e detalhes do termo |
-| **Aprender** (`pages/aprender.html`) | Introdução à temática | Libras, cultura surda, alfabeto, vídeos e quiz |
-| **Sobre** (`pages/sobre.html`) | Transparência acadêmica | Propósito, equipe, referências e limitações |
+| `id` | string | Identificador estável do termo. |
+| `termo` | string | Nome exibido. |
+| `categoria` | string | Agrupamento e filtro. |
+| `definicao` | string | Explicação em português. |
+| `palavrasChave` | array de strings | Sinônimos e expressões pesquisáveis. |
+| `exemploAtendimento` | string | Exemplo contextual em português. |
+| `fonte` | objeto | `titulo` e `url` da referência da definição. |
+| `videoLibras` | objeto ou null | Demonstração do sinal. |
+| `configuracaoMao` | objeto ou null | Imagem linguística complementar. |
+| `exemploLibras` | objeto ou null | Demonstração contextual em Libras. |
 
-Os recursos anteriormente previstos como páginas independentes — Primeiros passos, Guia rápido, Biblioteca de vídeos, Quiz e Alfabeto manual — são **redistribuídos** nessas seis páginas. A arquitetura antiga de oito páginas fica substituída **como proposta**, sujeita à revisão antes da implementação.
+Exemplo de estrutura (termo existente; fonte abreviada apenas neste exemplo):
 
-Os quatro caminhos da Home serão: **Preparar atendimento**, **Receitas acessíveis**, **Consultar glossário** e **Aprender sobre Libras**. O logotipo leva à Home; um menu expansível fornece acesso às cinco páginas internas. Ver `02_fluxo-navegacao.md`.
+```json
+{
+  "id": "nausea",
+  "termo": "Náusea",
+  "categoria": "Sintomas",
+  "definicao": "Sensação de enjoo ou vontade de vomitar.",
+  "palavrasChave": ["enjoo", "vomitar"],
+  "exemploAtendimento": "Você está sentindo enjoo?",
+  "videoLibras": null,
+  "configuracaoMao": null,
+  "exemploLibras": null
+}
+```
 
-## 6. Conteúdo de saúde e segurança
+Para futuras mídias, o código aceita `url` ou `src`, requer `validado` e `autorizado` verdadeiros e permite `credito`. Vídeos com `tipo` igual a `local` ou `arquivo` são apresentados por um elemento `<video>`; outros são acessados por link. Imagens podem informar `alt`. Os campos de mídia dos seis verbetes atuais estão nulos: não há demonstrações linguísticas incorporadas.
 
-### Atendimento e anamnese
+## 6. Qualidade, limites e avaliação
 
-Apresentar recomendações de acolhimento e uma situação didática com personagem fictícia. Evitar atribuir características ou necessidades a todas as pessoas surdas. Não utilizar dados de pacientes reais.
+O código incorpora HTML semântico, controles nativos, foco visível, link de salto, mensagens de status, atributos ARIA e adaptação a telas menores. O carrossel é manual e considera a preferência de movimento reduzido. A interface não depende de contas, respostas armazenadas ou informações de saúde pessoais.
 
-### Receitas e orientações
+A desenvolvedora relatou testes bem-sucedidos no GitHub Pages e aprovação visual das seis páginas. Isso não equivale a auditoria formal de acessibilidade, validação clínica ou linguística, nem comprovação de impacto extensionista. As referências dos verbetes são registradas no JSON; sua revisão especializada permanece uma atividade distinta dos testes de software.
 
-Apresentar **modelos de apoio à explicação** de informações já prescritas, não uma receita pronta nem gerador de receita. O exemplo poderá organizar os campos: medicamento, dose, horários/frequência, duração e cuidados, **todos dependentes de informação profissional existente**. Não inventar esquema posológico, não substituir prescrição original e não permitir alteração automática de dados clínicos. A ficha e os exemplos devem ser revisados por profissional habilitado antes de serem apresentados como material educativo final.
+## 7. Evolução e manutenção
 
-### Glossário e Libras
+- Produzir vídeos próprios de sinais, exemplos contextualizados e materiais de alfabeto manual com profissionais qualificados, revisão linguística, autorização de imagem e licenciamento definido.
+- Ampliar o vocabulário mediante revisão das definições e referências.
+- Realizar avaliação com usuários e revisão de acessibilidade, registrando resultados efetivamente obtidos.
 
-Cada definição deve ter referência verificável; vídeos de sinais devem ter fonte, autorização e validação apropriadas. Quando um recurso ainda não existir, informar que está indisponível, sem simular reprodução. Ilustrações artísticas não demonstram Libras.
+A branch `experimento-visual` é mantida para desenvolvimento e testes; `main` será a referência estável após a integração. Não incorporar conteúdo audiovisual de terceiros sem autorização adequada. Não apresentar ilustrações artísticas como sinais reais.
 
-## 7. Direção de experiência e acessibilidade
+## Documentos relacionados
 
-Preservar a identidade que está sendo explorada: azul-petróleo, verde-menta, marfim, cartões de presença visual, títulos expressivos e ilustrações acolhedoras. O design deve permitir **consulta rápida**, leitura clara, navegação por teclado, foco visível, boa responsividade e redução de movimento. Ilustrações informativas precisam de texto alternativo e não devem carregar sozinhas informação essencial. Diretrizes em `03_identidade-visual.md`.
-
-## 8. Escopo técnico
-
-**Incluído na primeira versão proposta:** seis páginas, menu acessível, navegação contextual, Home ilustrada, orientações práticas, simulação simples de anamnese, comparação educativa de orientações, modelo visual fictício, glossário pesquisável, conteúdos introdutórios e quiz simples sem persistência.
-
-**Fora do escopo:** autenticação, banco externo, backend, atendimento clínico, coleta de dados de pacientes, geração de receita, tradução automática para Libras, formação certificada, videoaulas obrigatórias e contratação de profissionais para gravá-las. Ampliações futuras dependerão de recursos e validação.
-
-## 9. Ação extensionista e avaliação
-
-**Etapas propostas:** pesquisa e levantamento de situações-problema; seleção e revisão de fontes; desenho de fluxos e ilustrações; desenvolvimento; apresentação e avaliação com a professora surda e outros participantes **se confirmados**; documentação do feedback e das melhorias.
-
-A professora surda é a principal referência de avaliação acadêmica, **não uma validação automática de todo material linguístico ou clínico**. Registrar separadamente o que foi planejado e realizado. A apresentação em sala, isoladamente, não comprova impacto comunitário. Os critérios da entrega, cronograma, participantes e evidências permanecem no `04_roteiro-entrega-academica.md`, que requer sincronização posterior.
-
-## 10. Referências iniciais e pendências
-
-**Base legal já identificada no projeto anterior (conferir e citar de acordo com o texto final):**
-
-- Lei nº 10.436/2002 — <https://www.planalto.gov.br/ccivil_03/leis/2002/l10436.htm>
-- Decreto nº 5.626/2005 — <https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2005/decreto/d5626.htm>
-- Lei nº 13.146/2015 — <https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm>
-
-**Pendente de confirmação:** nomes e responsabilidades da equipe; formato e momento da avaliação; fontes acadêmicas e clínicas efetivamente utilizadas; conteúdo final dos modelos de receita; mídias com licença e validação; identidade gráfica final; testes de acessibilidade; links publicados e evidências da ação.
+- [Fluxo de navegação](02_fluxo-navegacao.md)
+- [Identidade visual](03_identidade-visual.md)
+- [README](../README.md)
